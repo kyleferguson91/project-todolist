@@ -15,7 +15,7 @@ const projects = {
 
 // add the appropriate todo's to these projects based on the appropriate dates (datefn!)
 
-console.log(projects)
+
 
 // now we develop a way to add custom projects to this object!
 // if visually we want to show a cue that this is an option we can do this with the UI or not in this function
@@ -41,9 +41,6 @@ projects[projectname] = []
 
 
 
-addProject('mulan')
-addProject('mulan')
-console.log(projects)
 
 
 
@@ -59,6 +56,5 @@ export function removeProject(project) {
         console.log(projects)
 }
 
-removeProject('mulan')
 
 
