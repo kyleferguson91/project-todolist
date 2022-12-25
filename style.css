@@ -11,12 +11,13 @@ body {
     padding: 0;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-rows: 1fr 7fr 1fr;
 
     height: 100vh;
     background-color: #c6ebbe;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%238aa1b1' fill-opacity='0.35'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
+
 
 
 .flexcont {
@@ -27,14 +28,14 @@ body {
 
 
 .maincontainer {
-    width: 80vw;
-    height: 80vh;
+    width: 85vw;
+    height: 85vh;
     background-color: #FCD3DE;
     border-radius: 20px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr 10fr;
-  
+  overflow: scroll;
     padding: 0rem
 }
 
@@ -68,10 +69,98 @@ text-align: center;
     grid-row: 2;
     grid-column: 1/1;
     padding: 1rem;
+       height: auto;
+display: flex;
+flex-flow: column;
+
+
+
 }
 
 .projectcontent {
     border: 3px solid red;
+height: auto;
+min-height: 70vh;
+    display: flex;
+    flex-flow: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: .3fr 40px 1fr auto;
+    
+}
+
+.projectbartitle {
+    text-align: center;
+    font-size: 1.9rem;
+    margin: 0;
+padding: 0;
+}
+
+
+.defaultprojects {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    max-height: 30vh;
+}
+
+.defaultproject {
+    background-color: transparent;
+    border: none;
+    text-align: left;
+height: min-content;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    justify-self: start;
+
+}
+
+.defaultproject:hover {
+background-color: grey;
+
+    
+
+}
+
+
+
+.projectline {
+display: flex;
+height: auto;
+
+}
+.box {
+    width: 100%;
+    
+}
+
+
+
+.line {
+    background-color: black;
+
+    width: 95%;
+    height: 10px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+
+}
+
+.customprojects {
+height: max-content;
+overflow-y:auto;
+max-height: 40vh;
+font-size: 1.4rem;
+
+}
+
+.plusbutton {
+    width: 3rem;
+    height: 3rem;
+    justify-self: end;
+
 }
 
 
@@ -80,10 +169,31 @@ text-align: center;
     grid-row: 2;
     grid-column: 2/2;
     padding: 1rem;
+    font-size: 2rem;
 }
 
 .todocontent {
     border: 3px solid red;
+    display: flex;
+    justify-content: ;
+
+}
+
+.buttoncontainer {
+    display: flex;
+ 
+ margin-left: auto;
+}
+
+.todotitle {
+
+}
+
+.todobutton {
+    display: inline-block;
+    align-self: center;
+    height: auto;
+    font-size: 2rem;
 
 }
 
@@ -92,4 +202,61 @@ text-align: center;
 }
 
 
+@media screen and (max-width: 800px) {
 
+.maincontainer {
+    display: ;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 1.5fr 2fr;
+}
+
+
+.defaultproject {
+    font-size: 1.4rem;
+}
+
+
+.projectbartitle {
+    font-size: 1.4rem;
+}
+
+.todosection {
+    padding: 0;
+    margin-top: 20px;
+}
+
+.projectsection {
+    padding: 0;
+}
+
+.maincontainer {
+    padding: 0px;
+}
+
+.customprojects {
+
+ 
+    max-height: 40vh;
+    font-size: 1.4rem;
+    
+    }
+
+    .todocontent {
+        font-size: 1.4rem;
+    }
+
+
+
+
+
+
+
+.header {
+    display: none;
+}
+.footer {
+    display: none;
+}
+    
+    }
