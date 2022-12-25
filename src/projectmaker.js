@@ -3,14 +3,18 @@
 // arrays that contain the relevent todo objects 
 
 // we can come up with a master projects object, if in the UI we would like to separate the display
-// of default projects and custom projects, we can do that by accessing the relevent todo lists
-// rather than creating 2 project arrays.  
-// we can append the word default to all the keys of the default projects
+// it is easier to have a separate default project object as we can just loop over it 
+// to populate the display and not have to differentiate between default vs non
+
+export const defaultprojects = {
+    all: ['all'],
+    today: ['today'],
+    thisweek: ['this week'],
+}
+
 
 const projects = {
-    alldefault: [],
-    todaydefault: [],
-    weekdefault: [],
+
 }
 
 // add the appropriate todo's to these projects based on the appropriate dates (datefn!)
