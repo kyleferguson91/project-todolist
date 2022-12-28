@@ -44,7 +44,7 @@ import('./projectmaker.js')
         projectdiv.appendChild(projectbutton)
         projectdiv.appendChild(deleteprojectbutton)
   
-        console.log(projectdiv)
+  
 
         // we want to append these to the div which houses custom projects
 
@@ -64,9 +64,8 @@ import('./projectmaker.js')
         // append the function to add button logic to updated dom elements
 
         import('./buttonlogic.js')
-        .then((obj) => {
-            obj.deleteProjects()
-        })
+        .then((obj) => 
+        obj.deleteProjects())
 
 
         // 
@@ -76,4 +75,31 @@ import('./projectmaker.js')
 })
 
 
+
+
+
+
+}
+
+// function to update dom if something is removed
+
+export function updateAfterRemove(remove) {
+    const removediv = document.querySelectorAll('.projectbuttons')
+   removediv.forEach((elem,ind,arr) => {
+
+        if (elem.dataset.title == remove) {
+             
+            // if the data attribute is equal to the title we want to remove, remove the child
+            // from the parent container 
+            
+            
+
+            const parent = document.querySelector('.customprojects')
+            console.log(elem)
+            parent.removeChild(elem)
+
+
+        }
+
+   })
 }

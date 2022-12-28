@@ -239,14 +239,40 @@ function switchCreation() {
   
             
         const deleteproject = document.querySelectorAll('.deleteprojectbutton')
-
+        console.log(deleteproject)
         deleteproject.forEach((elem,ind,arr) => {
             elem.addEventListener('click', (e) => {
 
 
                 // figure out which button was clicked and find appropriate project title
-                console.log(e.target.dataset.title)
+             
+                let remove = e.target.dataset.title
+               
+               
+                // we want to remove the according div with class projectbuttons and data=title equal to above
+                // we will handle this with a function in the dom logic module
 
+            
+                // we also need to remove the project from the custom projects object
+                // we have a function for this within project maker module
+
+
+
+                // we can pass the argument of the appropriate key above 
+
+                import('./projectmaker.js')
+                .then((obj) => {
+                    
+                obj.removeProject(remove)
+
+
+                
+                   
+            })
+
+            import('./domLogic.js')
+            .then((obj) => {3
+            obj.updateAfterRemove(remove)})
 
               
             })
