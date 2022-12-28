@@ -15,6 +15,7 @@ body {
 
     height: 100vh;
     background-color: #c6ebbe;
+   
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%238aa1b1' fill-opacity='0.35'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
@@ -24,12 +25,13 @@ body {
     display: flex;
     align-self: center;
     justify-self: center;
+
 }
 
 
 .maincontainer {
     width: 85vw;
-    height: 85vh;
+    height: 84vh;
     background-color: #FCD3DE;
     border-radius: 20px;
     display: grid;
@@ -145,20 +147,41 @@ height: auto;
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
+    margin-bottom: 1rem;
 
 }
 
 .customprojects {
 height: max-content;
 overflow-y:auto;
-max-height: 40vh;
+max-height: 55vh;
+min-height: 35vh;
 font-size: 1.4rem;
+
 
 }
 
+.customprojecttitle {
+    background-color: transparent;
+    border: none;
+    text-align: left;
+height: min-content;
+  
+    font-weight: bold;
+    font-size: 1.4rem;
+    justify-self: start;
+    display: block;
+    width: 100%;
+}
+
+.customprojecttitle:hover {
+    background-color: grey;
+}
+
+
 .plusbutton {
-    width: 3rem;
-    height: 3rem;
+    width: 5rem;
+    height: 5rem;
     justify-self: end;
 
 }
@@ -201,6 +224,143 @@ font-size: 1.4rem;
     text-align: center;
 }
 
+.modal {
+
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(15px);
+    visibility: hidden;
+    position: fixed;
+    opacity: 1;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0s, opacity .25s 0s, transform .25s;
+}
+
+.closebutton {
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 12px;
+    background-color: light;
+    width: 3rem;
+    margin-bottom: 10px;
+ 
+    justify-self: end;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 10fr;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 50%;
+    height: 50%;
+border-radius: 30px;
+padding: 40px;
+
+}
+
+.dateinput {
+width: 149px;
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
+}
+
+.projflex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project {
+
+display: flex;
+flex-flow: column;
+justify-content: space-between;
+
+}
+ .project > input {
+    align-self: flex-start;
+ }
+
+
+
+.createnewheading {
+    margin: 0;
+    align-self: center;
+}
+
+.changebg {
+    background-color: lightgray;
+   
+}
+
+.todoselect, .projectselect {
+    margin: 0;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.closebuttonbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.createnewbox {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.flexforlabel > label, .flexforlabel > input {
+margin-bottom: 5px;
+}
+
+.flexforlabel {
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.submitbutton, .projectsubmit {
+margin-top: 20px;
+display: inline;
+width: 5rem;
+height: 4rem;
+
+}
+
+.projectbuttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.customprojecttitle {
+
+}
+
+.deleteprojectbutton {
+
+    
+}
+
+.submitcontainer {
+display: flex;
+justify-content: center;
+}
+    
 
 @media screen and (max-width: 800px) {
 
@@ -213,7 +373,7 @@ font-size: 1.4rem;
 
 
 .defaultproject {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
 }
 
 
@@ -238,8 +398,13 @@ font-size: 1.4rem;
 
  
     max-height: 40vh;
-    font-size: 1.4rem;
-    
+
+    min-height: 40vh;
+    }
+
+    .customprojecttitle {
+        font-size: 1.2rem;
+        font-weight: normal;
     }
 
     .todocontent {
@@ -248,7 +413,12 @@ font-size: 1.4rem;
 
 
 
-
+    .plusbutton {
+        width: 2rem;
+        height: 2rem;
+  
+    
+    }
 
 
 
@@ -257,6 +427,16 @@ font-size: 1.4rem;
 }
 .footer {
     display: none;
+}
+
+
+
+
+.modal-content {
+
+    width: 90%;
+    height: 90%;
+
 }
     
     }
