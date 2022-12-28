@@ -1,8 +1,14 @@
 // factory function to create todo objects
 
+
+let todocatch1 = []
 export function createTodo(title, description, duedate, priority, note, project, completed = false) 
 {   
-    console.log({title, description, duedate, priority, note, project, completed})
+
+    let obj = {title, description, duedate, priority, note, project, completed}
+    
+    todocatch1.push(obj)
+    console.log(todocatch1, 'todocatch')
     return {title, description, duedate, priority, note, project, completed}
 }
 

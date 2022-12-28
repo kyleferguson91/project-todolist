@@ -13,8 +13,10 @@ export const defaultprojects = {
 }
 
 
-const projects = {
-
+export const projects = {
+custom1: ['custom1'],
+custom2: ['custom2'],
+custom3: ['custom3']
 }
 
 // add the appropriate todo's to these projects based on the appropriate dates (datefn!)
@@ -33,6 +35,8 @@ export function addProject(projectname) {
 
 if (projects.hasOwnProperty(projectname)) {
     console.log('logs that property exists within projectmaker.js')
+ alert('Project exists, please choose another name!')
+
 }
 
     // else we add the project name as a key to project object
@@ -40,6 +44,9 @@ if (projects.hasOwnProperty(projectname)) {
 
 projects[projectname] = []
 
+console.log(projects)
+
+return;
 }
 
 
@@ -62,3 +69,17 @@ export function removeProject(project) {
 
 
 
+// function below reports name of projects currently in list and append to an array
+
+export let currentCustomProjects = []
+export function getProjects() {
+    currentCustomProjects = []
+
+
+        for (let project in projects) {
+            currentCustomProjects.push(project)
+        }
+        
+
+
+    }
