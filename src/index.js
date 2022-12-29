@@ -7,14 +7,12 @@ import * as dom from './domLogic.js'
 import {addButtonLogic} from './buttonlogic.js'
 
 
-// run master function to add logic to all buttons
-addButtonLogic();
-
-// run dom logic
+// run dom logic and build render 
 
 (async function dom() {
     let dom = await import('./domLogic.js')
     dom.renderCustomProjects()
+    
 })();
 
 

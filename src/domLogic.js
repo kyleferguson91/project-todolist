@@ -1,27 +1,44 @@
 // use this function to render custom projects array that is served from project maker
+// we will update the array from the project makers function when needed then run the render
 
 export function renderCustomProjects() {
 
-    // import project names from loop function in project maker
+ // clear custom project dom elements! otherwise it will just add to them!
+ // div container class is customprojects
+ 
+ document.querySelector('.customprojects').innerHTML = ""
+
+
+// import project names from array created in project maker 
 
  
 
 import('./projectmaker.js')
 .then((obj) => {
+
+    // this creates a new array based on current contents of project object
+    // which we can render from
+
+
     obj.getProjects()
 
     //array below is current names of cusom projects
+    
     const customprojectslist = obj.currentCustomProjects
+
     // loop this array 
     customprojectslist.forEach((elem,ind,arr) => {
         
+
+        // create project coontainer 
+
         let projectdiv = document.createElement('div')
         
-        // add styles 
+        // add style to project container
 
         projectdiv.classList.add('projectbuttons')
 
-        // create buttons for title and delete
+        // create buttons for title and dlelete objects
 
         let projectbutton = document.createElement('button')
         projectbutton.classList.add('customprojecttitle')
@@ -72,6 +89,13 @@ import('./projectmaker.js')
 
     })
 
+
+    import('./buttonlogic.js')
+    .then((o) => {
+        console.log('adding button login')
+        o.addButtonLogic();
+    })
+
 })
 
 
@@ -81,25 +105,3 @@ import('./projectmaker.js')
 
 }
 
-// function to update dom if something is removed
-
-export function updateAfterRemove(remove) {
-    const removediv = document.querySelectorAll('.projectbuttons')
-   removediv.forEach((elem,ind,arr) => {
-
-        if (elem.dataset.title == remove) {
-             
-            // if the data attribute is equal to the title we want to remove, remove the child
-            // from the parent container 
-            
-            
-
-            const parent = document.querySelector('.customprojects')
-            console.log(elem)
-            parent.removeChild(elem)
-
-
-        }
-
-   })
-}

@@ -124,6 +124,10 @@ background-color: grey;
 
 }
 
+.customprojecttitle:hover {
+    background-color: grey;
+}
+
 
 
 .projectline {
@@ -174,9 +178,10 @@ height: min-content;
     width: 100%;
 }
 
-.customprojecttitle:hover {
-    background-color: grey;
+.projectbuttons:hover {
+    background-color: red;
 }
+
 
 
 .plusbutton {
@@ -311,6 +316,10 @@ justify-content: space-between;
     margin: 0;
     align-self: center;
     margin-bottom: 20px;
+    width: auto;
+    height: auto;
+padding: 10px;
+    font-size: 1.4rem;
 }
 
 .closebuttonbox {

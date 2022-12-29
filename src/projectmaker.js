@@ -14,9 +14,7 @@ export const defaultprojects = {
 
 
 export const projects = {
-custom1: ['custom1'],
-custom2: ['custom2'],
-custom3: ['custom3']
+
 }
 
 // add the appropriate todo's to these projects based on the appropriate dates (datefn!)
@@ -31,7 +29,7 @@ custom3: ['custom3']
 export function addProject(projectname) {
 
     // if we try to add a project name that already exists, we can return a confirmation 
-
+if (projectname == "") {return}
 
 if (projects.hasOwnProperty(projectname)) {
     console.log('logs that property exists within projectmaker.js')
@@ -44,7 +42,7 @@ if (projects.hasOwnProperty(projectname)) {
 
 projects[projectname] = []
 
-console.log(projects)
+console.log(projects, projectname)
 
 return;
 }
@@ -78,6 +76,7 @@ export function getProjects() {
 
         for (let project in projects) {
             currentCustomProjects.push(project)
+            
         }
         
 

@@ -22,7 +22,7 @@ export function defaultButtonLogic() {
     }
     
     
-    // function below adds click events to custom project buttons
+    // function below adds click events to custom project title buttons
     
     export function customButtonLogic() {
     
@@ -35,9 +35,9 @@ export function defaultButtonLogic() {
         
                     console.log(e.target)
         
-                    console.log(obj.projects)
+                   
               
-                console.log(obj.projects[e.target.id])
+               
                 })
                 
             })
@@ -105,6 +105,7 @@ export function defaultButtonLogic() {
     
         function toggleModal() {
             modalwindow.classList.toggle('show-modal')
+            
         }
     
     
@@ -123,7 +124,7 @@ export function defaultButtonLogic() {
         window.addEventListener("click", windowOnClick);
     
         plusbutton.addEventListener('click', (e) => {
-            
+         
             toggleModal()
         
         
@@ -134,7 +135,7 @@ export function defaultButtonLogic() {
     closebutton.addEventListener('click', toggleModal)
     
     
-    //submit button login in modal window
+    //submit button login in modal window for todo
     // want to use the button to submit answers to appropriate module
     // then reset the inputs to nothing in them for the next addition
     
@@ -153,31 +154,77 @@ export function defaultButtonLogic() {
     })
     
 
-      //submit button login in modal window
+      //submit button login in modal window for project
     // want to use the button to submit answers to appropriate module
     // then reset the inputs to nothing in them for the next addition
     
     const projectsubmit = document.querySelector('.projectsubmit')
-    const projectvalue = document.querySelector('#projecttitle').value
     projectsubmit.addEventListener('click', (e) => {
-
-
+   
+// add value of title field to projects object
         import('./projectmaker.js')
         .then((obj) => {
-            obj.addProject(projectvalue) 
-            
-
-   
+            let  projecttitle = document.querySelector('#projecttitle')
+            obj.addProject(projecttitle.value) 
+             // set project title equal to nothing again 
+ 
+             projecttitle.value = ""
 
         }) 
 
 
-        toggleModal()
+
+
+        // then re render the dom
+        import('./domLogic')
+        .then((o) => {
+            o.renderCustomProjects()
+        })
+        
+        
+
+        closebutton.addEventListener('click', e => {
+            toggleModal()
+            console.log('closer')
+        })
+
+        // add event listener to plus button again!
+        
+        plusbutton.addEventListener('mousedown', (e) => {
+         
+            toggleModal()
+        
+        
+        })
+    
+   
+
+        // reset modal window to create todo by default
+
+    const todobuttonselect = document.querySelector('.todoselect')
+    const projectbuttonselect = document.querySelector('.projectselect')
+    const todoinputs = document.querySelector('.inputcontainer')
+    const projectinputs = document.querySelector('.project')
+
+
+       // remove the modal window
+       modalwindow.classList.remove('show-modal')
+
+
+       projectinputs.classList.add('hide')
+       todoinputs.classList.remove('hide')
+       projectbuttonselect.classList.remove('changebg')
+       todobuttonselect.classList.add('changebg')
+
+
+
     })
     
     
     }
     
+
+   
 
     //logic below to switch between creation of todo or a project
 
@@ -186,6 +233,8 @@ function switchCreation() {
     const projectbuttonselect = document.querySelector('.projectselect')
     const todoinputs = document.querySelector('.inputcontainer')
     const projectinputs = document.querySelector('.project')
+    
+    todobuttonselect.classList.add('changebg')
 
     function changebg(e) {
         e.target.classList.toggle('changebg')
@@ -194,16 +243,12 @@ function switchCreation() {
     
     todobuttonselect.addEventListener('click', (e) => {
         
-        if (projectbuttonselect.classList.contains('changebg')) {
-            projectbuttonselect.classList.remove('changebg')
-            changebg(e)
-            todoinputs.classList.remove('hide')
-            projectinputs.classList.add('hide')
-            return
-        }
-        todoinputs.classList.remove('hide')
+
+        projectbuttonselect.classList.remove('changebg')
         projectinputs.classList.add('hide')
-        changebg(e)
+        todobuttonselect.classList.add('changebg')
+        todoinputs.classList.remove('hide')
+
 
         
         
@@ -211,16 +256,10 @@ function switchCreation() {
 
     projectbuttonselect.addEventListener('click', (e) => {
        
-        if (todobuttonselect.classList.contains('changebg')) {
-            todobuttonselect.classList.remove('changebg')
-            changebg(e)
-            todoinputs.classList.add('hide')
-            projectinputs.classList.remove('hide')
-            return
-        }
-        todoinputs.classList.add('hide')
+        projectbuttonselect.classList.add('changebg')
         projectinputs.classList.remove('hide')
-        changebg(e)
+        todobuttonselect.classList.remove('changebg')
+        todoinputs.classList.add('hide')
 
 
     })
@@ -239,7 +278,7 @@ function switchCreation() {
   
             
         const deleteproject = document.querySelectorAll('.deleteprojectbutton')
-        console.log(deleteproject)
+
         deleteproject.forEach((elem,ind,arr) => {
             elem.addEventListener('click', (e) => {
 
@@ -262,17 +301,25 @@ function switchCreation() {
 
                 import('./projectmaker.js')
                 .then((obj) => {
-                    
+            
+
                 obj.removeProject(remove)
+
+
+             
+                
 
 
                 
                    
             })
 
+            // call render custom projects since we have upated the array that it takes as an argument
+            // the function itself updates the array to be rendered based on the current master project object
+
             import('./domLogic.js')
             .then((obj) => {3
-            obj.updateAfterRemove(remove)})
+            obj.renderCustomProjects()})
 
               
             })
@@ -298,16 +345,17 @@ function switchCreation() {
     
     //logic to add events to custom project buttons 
     customButtonLogic()
-    
+     modalLogic()
     
     //logic to add events to todo buttons 
     todoButtonLogic()
     
     
-    modalLogic()
-    
+ 
     switchCreation()
 
     deleteProjects()
-
+    
+   
+    
     }
