@@ -2,14 +2,14 @@
 
 
 let todocatch1 = []
-export function createTodo(title, description, duedate, priority, note, project, completed = false) 
+export function createTodo(title, description, duedate, priority,  project, completed = false) 
 {   
 
-    let obj = {title, description, duedate, priority, note, project, completed}
+    let obj = {title, description, duedate, priority,  project, completed}
     
     todocatch1.push(obj)
     console.log(todocatch1, 'todocatch')
-    return {title, description, duedate, priority, note, project, completed}
+    return {title, description, duedate, priority,  project, completed}
 }
 
 

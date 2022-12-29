@@ -11,6 +11,8 @@
 <body>
 
 
+
+
     <div class="modal">
         <div class="modal-content">
             <div class="closebuttonbox">
@@ -23,33 +25,65 @@
               
             </div>
 <div class="inputcontainer ">
-    <div class="flexforlabel">
-        <label for="title">Title</label>
-        <input id="title" type="text" required></input>
-    </div>
-    <div class="flexforlabel"><label for="description">Description</label>
-        <input id="description" type="text" value=""></input></div>
-    <div class="flexforlabel"><label for="duedate">Duedate</label>
-        <input id="duedate" class="dateinput" type="date" required></input></div>
-    <div class="flexforlabel"><label for="priority">Priority</label><input id="priority" type="radio" required></input></div>
-    <div class="flexforlabel"><label for="note">Note</label>
-        <input id="note" type="text"></input></div>
-    <div class="flexforlabel"><label for="project" required>Project</label><input id="project" type="text"></input></div>
-    <div class="flexforlabel"><label for="completed">Completed</label><input id="completed" type="checkbox" unchecked></input></div>
- 
+
+<div class="inputgrid">
+    
+        <input id="title" type="text" required placeholder="Title" class="titleinputbar"></input>
+        <input id="description" type="text" value="" placeholder="Description" class="titleinputbar"></input>
+    
+    
+         <div class="todoflex">
+    
+                 <div class="flexforlabel"><label for="duedate" >Duedate</label>
+             <input id="duedate" class="dateinput" type="date" required></input></div>
+    
+    
+                 <div class="flexforlabel">
+             <label for="priority">Priority:</label>
+                 <div class="prioritybox">
+                 <div class="prioritywrapperlow "><label for="priority-low">L</label><input id="priority-low" class="prioritychoice"  name="priority"  type="radio" value="low" required></div>
+                 <div class="prioritywrappermed "><label for="priority-med">M</label><input id="priority-med" class="prioritychoice"  type="radio" name="priority" value="meidum" required></div>
+                 <div class="prioritywrapperhigh ">    <label for="priority-high">H</label><input id="priority-high" class="prioritychoice"  type="radio" name="priority" value="high" required></div>
+                 </div>
+                 </input></div>
+    
+    
+                 <div class="flexforlabel"><label for="project" required>Project</label>
+    
+             <select name="project" id="project" class="selectoptions">
+    
+                   </select></div>
+    
+    
+    
+                 <div class="flexforlabel"><label for="completed">Completed</label><input id="completed" type="checkbox" unchecked></input></div>
+         </div>
+    
+    
+</div>
     <div class="submitcontainer">
-        <button class="submitbutton">Submit</button>
+
+        <button class="submitbutton" type="">Submit</button>
+        
+        
     </div>
 </div>
-<div class="project hide">
-    <div class="projflex">
-        <label for="projectitle">Title</label>
-        <input type="text" name="" id="projecttitle" >
-    </div>
 
-    <div class="submitcontainer">
-        <button class="projectsubmit">Submit</button>
-    </div>
+
+
+
+
+
+<div class="project hide">
+
+        <div class="projflex">
+            <label for="projectitle" class="projecttitlelabel">Title</label>
+            <input type="text" name="" class="bigbar" id="projecttitle" maxlength="15" >
+        </div>
+        <div class="submitcontainer">
+            <button type="" class="projectsubmit">Submit</button>
+        </div>
+  
  
 </div>
 

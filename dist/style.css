@@ -103,6 +103,7 @@ padding: 0;
     flex-flow: column;
     justify-content: center;
     max-height: 30vh;
+    padding: 20px;
 }
 
 .defaultproject {
@@ -156,9 +157,9 @@ height: auto;
 }
 
 .customprojects {
-height: max-content;
-overflow-y:auto;
-max-height: 55vh;
+
+overflow-y: scroll;
+max-height: 25vh;
 min-height: 35vh;
 font-size: 1.4rem;
 
@@ -170,7 +171,7 @@ font-size: 1.4rem;
     border: none;
     text-align: left;
 height: min-content;
-  
+
     font-weight: bold;
     font-size: 1.4rem;
     justify-self: start;
@@ -178,8 +179,8 @@ height: min-content;
     width: 100%;
 }
 
-.projectbuttons:hover {
-    background-color: red;
+.deleteprojectbutton:hover {
+  
 }
 
 
@@ -268,15 +269,52 @@ height: min-content;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    width: 50%;
-    height: 50%;
+    width: 60%;
+    height: 60%;
 border-radius: 30px;
-padding: 40px;
+padding: 30px;
 
+}
+
+.ghost {
+    opacity: 0.5;
 }
 
 .dateinput {
 width: 149px;
+}
+
+.inputcontainer {
+ padding: 10%;
+ padding-top: 0
+ ;
+    font-family: monospace;
+    font-size: 1rem;
+    
+
+
+}
+
+.flexforlabel > input, .flexforlabel > select {
+margin-top: 8px;
+}
+
+.flexforlabel > select {
+    width: 149px;
+    background-color: white;
+}
+ 
+
+.project {
+    padding: 0 3rem 0 3rem;
+    height: 89.35%;
+    
+}
+
+
+
+.projflex > input {
+  
 }
 
 .hide {
@@ -284,10 +322,62 @@ width: 149px;
     visibility: hidden;
 }
 
-.projflex {
+.projectform {
+    
     display: flex;
+    flex-flow: column;
+    height: 100%;
     justify-content: space-between;
 }
+
+.redback {
+    background-color: rgb(255, 0, 0, 0.4);
+}
+
+
+.todoform {
+
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.projflex {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: monospace;
+    font-size: 1.2rem;
+    align-items: center;
+
+}
+
+
+.titleinputbar {
+    width: 100%;
+    margin-bottom: .5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+}
+
+.inputgrid {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(auto, 1fr);
+
+}
+
+.todoflex {
+    border: 2px solid rebeccapurple;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    justify-items: center;
+    
+height: 8rem;
+    
+}
+
+
 
 .project {
 
@@ -308,7 +398,7 @@ justify-content: space-between;
 }
 
 .changebg {
-    background-color: lightgray;
+    background-color: rgb(128, 128, 128, 0.7);
    
 }
 
@@ -321,6 +411,29 @@ justify-content: space-between;
 padding: 10px;
     font-size: 1.4rem;
 }
+.prioritybox
+{
+    display: flex;
+    justify-content: space-between;
+    width: 149px;
+    font-weight: bold;
+}
+
+.prioritywrapperlow {
+    background-color: rgb(0, 128, 0, 0.5);
+    display: inline;
+}
+
+.prioritywrappermed {
+    background-color: rgba(255, 255, 0, 0.5);
+    display: inline;
+}
+
+.prioritywrapperhigh {
+    background-color: rgb(255, 0, 0, 0.5);
+    display: inline;
+}
+
 
 .closebuttonbox {
     display: flex;
@@ -337,8 +450,11 @@ margin-bottom: 5px;
 }
 
 .flexforlabel {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    align-items: baseline;
+    justify-content: space-around;
+ 
    
 }
 
@@ -354,6 +470,7 @@ height: 4rem;
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    padding: 0px 20px 0px 20px;
 }
 
 .customprojecttitle {
@@ -370,6 +487,20 @@ display: flex;
 justify-content: center;
 }
     
+.bigbar
+{
+    width: 60%;
+    height: 2rem;
+    font-size: 1.2rem;
+}
+
+
+
+.projecttitlelabel {
+    font-size: 1.8rem;
+   }
+
+   
 
 @media screen and (max-width: 800px) {
 
@@ -380,6 +511,46 @@ justify-content: center;
     grid-template-columns: 1.5fr 2fr;
 }
 
+
+.inputcontainer {
+    padding: 0;
+    margin: 0px;
+    padding: 5%;
+
+    
+   
+   
+   }
+
+
+   .todoflex {
+    height: 30vh;
+
+    
+}
+
+   .flexforlabel {
+    font-size: .8rem;
+
+   }
+
+   .projecttitlelabel {
+    font-size: .8rem;
+   }
+
+   .project > label {
+ 
+   }
+   
+.project {
+    padding: 0;
+    margin: 0px;
+    padding: 5%;
+
+    
+   
+   
+   }
 
 .defaultproject {
     font-size: 1.1rem;

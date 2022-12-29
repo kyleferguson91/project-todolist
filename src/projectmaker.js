@@ -28,8 +28,11 @@ export const projects = {
 
 export function addProject(projectname) {
 
+    
+
     // if we try to add a project name that already exists, we can return a confirmation 
 if (projectname == "") {return}
+
 
 if (projects.hasOwnProperty(projectname)) {
     console.log('logs that property exists within projectmaker.js')

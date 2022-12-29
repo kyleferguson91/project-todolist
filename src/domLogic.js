@@ -1,6 +1,7 @@
 // use this function to render custom projects array that is served from project maker
 // we will update the array from the project makers function when needed then run the render
 
+
 export function renderCustomProjects() {
 
  // clear custom project dom elements! otherwise it will just add to them!
@@ -9,9 +10,15 @@ export function renderCustomProjects() {
  document.querySelector('.customprojects').innerHTML = ""
 
 
+
+ 
+
 // import project names from array created in project maker 
 
  
+
+
+
 
 import('./projectmaker.js')
 .then((obj) => {
@@ -92,16 +99,63 @@ import('./projectmaker.js')
 
     import('./buttonlogic.js')
     .then((o) => {
-        console.log('adding button login')
+      
         o.addButtonLogic();
     })
+
+})
+
+selectChoiceCreation()
+
+
+}
+
+
+// function to populate display of projects in todo creation based on current projects
+
+function selectChoiceCreation() {
+
+    import('./projectmaker.js')
+    .then((obj) => {
+  
+    // remove all content to start
+    document.querySelector('.selectoptions').innerHTML = ""
+
+// get the names of the custom projects and create elements
+
+obj.currentCustomProjects.forEach((elem) => {
+
+
+    let option = document.createElement('option')
+
+     option.textContent = elem
+     option.value = elem
+
+        document.querySelector('.selectoptions').appendChild(option)
 
 })
 
 
 
 
+})}
 
+
+//master function to render all components
+
+export function render(){
+
+
+
+ 
+import('./buttonlogic.js')
+.then((o) => {
+    o.modalLogic()
+    o.addButtonLogic()
+    renderCustomProjects()
+  
+
+})
 
 }
 
