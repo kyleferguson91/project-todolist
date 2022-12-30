@@ -1,6 +1,9 @@
 // use this function to render custom projects array that is served from project maker
 // we will update the array from the project makers function when needed then run the render
 
+import { defaultOptions } from 'acorn'
+import { el } from 'date-fns/locale'
+
 
 export function renderCustomProjects() {
 
@@ -49,7 +52,7 @@ import('./projectmaker.js')
 
         let projectbutton = document.createElement('button')
         projectbutton.classList.add('customprojecttitle')
-        projectbutton.id = "custom1"
+        projectbutton.dataset.title = elem
 
         // set title to the appropriate custom project
 
@@ -150,12 +153,102 @@ export function render(){
  
 import('./buttonlogic.js')
 .then((o) => {
+
+    renderCustomProjects()
+    initialRenderTodo()
     o.modalLogic()
     o.addButtonLogic()
-    renderCustomProjects()
-  
 
 })
 
 }
 
+
+
+export function populateDisplay(projectobject ) {
+let project = ""
+let projectset = ""
+
+const todoarea = document.querySelector('.todosection')
+
+todoarea.innerHTML = ""
+
+if (projectobject == "all") {projectset = "defaultprojects"}
+
+else if (projectobject == "today") {projectset = "defaultprojects"}
+
+else if (projectobject == "thisweek") {projectset = "defaultprojects"}
+
+else {projectset = 'projects'}
+
+console.log(projectobject, projectset, 'object set')
+
+
+
+
+    import('./projectmaker.js')
+    .then((o) => {
+        console.log(o.projects, 'projlog')
+        for (let prop of o[projectset][projectobject]) {
+            console.log(prop, 'propp')
+                // create a div to house the content set the styles
+
+            let todocontentdiv = document.createElement('div')
+            todocontentdiv.classList.add('todocontent')
+
+// create a p element to house the title
+
+           let text = document.createElement('p')
+
+// since we are looping through an array of objects, set the title to 
+
+           text.textContent = prop.title
+
+           todocontentdiv.appendChild(text)
+
+           text.classList.add('todotitles')
+
+            todoarea.appendChild(todocontentdiv)
+
+            const buttoncontainer = document.createElement('div')
+            buttoncontainer.classList.add('buttoncontainer')
+
+
+
+           for (let i = 0; i<3; i++) {
+
+            let button = document.createElement('button')
+            button.classList.add('todobutton')
+            button.textContent = "Stuff"
+            buttoncontainer.appendChild(button)
+           }
+           todocontentdiv.appendChild(buttoncontainer)
+
+
+
+
+            console.log(prop)
+        }
+    })
+}
+
+
+
+
+// draw the todo display!
+
+export function initialRenderTodo() {
+    
+    // get the todo area and set it equal to the all array in defaultprojects
+    // start by clearing the area
+   
+    populateDisplay('all')
+   
+    // loop the array and draw dom elements for each one!
+
+
+    
+
+
+
+}

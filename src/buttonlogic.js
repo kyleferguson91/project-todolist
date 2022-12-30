@@ -18,29 +18,7 @@ function toggleModal() {
 
 
 
-// function below adds click events to default project buttons
 
-
-export function defaultButtonLogic() {
-
-
-    const buttons = document.querySelectorAll('.defaultproject')
-    buttons.forEach((elem,ind,arr) => {
-        elem.addEventListener('click', (e) => {
-            import('./projectmaker.js')
-            .then((obj) => {
-    
-                console.log(e.target)
-    
-                console.log(obj.defaultprojects)
-          
-            console.log(obj.defaultprojects[e.target.id])
-            })
-            
-        })
-    })
-    
-    }
     
     
     // function below adds click events to custom project title buttons
@@ -51,12 +29,15 @@ export function defaultButtonLogic() {
         const buttons = document.querySelectorAll('.customprojecttitle')
         buttons.forEach((elem,ind,arr) => {
             elem.addEventListener('click', (e) => {
+               let target = e.target.dataset.title
+               
                 import('./projectmaker.js')
                 .then((obj) => {
         
-                    console.log(e.target)
-        
                    
+                   
+                    
+                    populateDisplay(target)
               
                
                 })
@@ -253,43 +234,6 @@ roast()
 
 
 
-   function submitLogic() {
-
-     //submit button login in modal window for todo
-    // want to use the button to submit answers to appropriate module
-    // then reset the inputs to nothing in them for the next addition
-    
-    const submit = document.querySelector('.submitbutton')
-    submit.addEventListener('click', (e) => {
-
-// function to add to todo objects list
-        import('./formlogic.js')
-        .then((obj) => {
-        // run form controller when we click submit which gets the relevent inputs and runs todo maker
-            obj.formController()
-        }) 
-
-
-// remove the modal after creating our todo, and reset the inputs back to their defaults
-
-        toggleModal()
-     
-
-
-// we also want to ensure our inputs are truthy
-// only want to require title, description date and project and complete
-
-
-        // render the dom after all this, which will update all elements
-
-        import('./domLogic.js')
-        .then((o) => {
-            o.render()
-        })
-
-
-    })
-   }
 
 
 
@@ -307,6 +251,55 @@ roast()
 
     
     }
+
+    function submitLogic() {
+
+        //submit button login in modal window for todo
+       // want to use the button to submit answers to appropriate module
+       // then reset the inputs to nothing in them for the next addition
+       
+       const submit = document.querySelector('.submitbutton')
+       submit.addEventListener('click', (e) => {
+   e.stopImmediatePropagation()
+   // function to add to todo objects list
+           import('./formlogic.js')
+           .then((obj) => {
+           // run form controller when we click submit which gets the relevent inputs and runs todo maker
+               obj.formController()
+           }) 
+   
+   
+   // remove the modal after creating our todo, and reset the inputs back to their defaults
+   
+           toggleModal()
+        
+   
+   
+   // we also want to ensure our inputs are truthy
+   // only want to require title, description date and project and complete
+   
+   
+           // render the dom after all this, which will update all elements
+   
+           import('./domLogic.js')
+           .then((o) => {
+               o.render()
+               
+           })
+   
+        import('./buttonlogic.js')
+        .then((obj) => {
+            obj.addButtonLogic()
+            obj.modalLogic()
+        })
+   
+       })
+       resetInputs()
+      }
+   
+
+
+
     function projectsubmitlogic() {
 
         //submit button login in modal window for project
@@ -321,7 +314,7 @@ roast()
   console.log(projecttitle.value)
           // ensure input is truthy
           console.log('poohere', projecttitle.value)
-          if (checkText(projecttitle.value)) {
+          if (checkText(projecttitle.value) == true) {
             console.log(projecttitle.value, )
          
 let value = projecttitle.value
@@ -364,7 +357,7 @@ let value = projecttitle.value
           }
           else {
               addProjectInputRed()
-            
+             
   
           }
      
@@ -425,7 +418,7 @@ let value = projecttitle.value
 
     
 function checkText(str) {
-    let test1 = /^[^\s]*[\w!]+$/gi
+    let test1 = /^[^\s]*[\w!|\s]+$/gi
 
    return test1.test(str)
 }
@@ -536,7 +529,8 @@ function switchCreation() {
         import('./projectmaker.js')
         .then((obj) => {
 
-            if (Object.keys(obj.projects).length == 0) {console.log('0 length no delete')}
+            if (Object.keys(obj.projects).length == 0) {
+      }
             
             else { const deleteproject = document.querySelectorAll('.deleteprojectbutton')
      
@@ -565,7 +559,10 @@ function switchCreation() {
                 
      
                     obj.removeProject(remove)
-     
+                    import('./buttonlogic.js')
+                    .then((o) => 
+                    {o.addButtonLogic()
+                  o.modalLogic()})
      
                  
                     
@@ -590,7 +587,7 @@ function switchCreation() {
                 })
      
      
-              
+
             })}
      
         })
@@ -633,6 +630,104 @@ function switchCreation() {
 
     
         }
+
+
+
+//function here to add event listeners to product buttons to update todo display
+//we will have a function when clicked to update them accordingly
+//
+
+export function projectTitleEvents1() {
+const tododisplay = document.querySelector('.todocontent')
+
+// when we click all, loop through array all and display the contents!
+
+const alltitle = document.querySelector('#all')
+const today = document.querySelector('#today')
+const thisweek = document.querySelector('#thisweek')
+
+const defaults = [alltitle, today, thisweek]
+defaults.forEach((elem,ind,arr) => {
+    elem.addEventListener('click', (e) => {
+        console.log(e.target, 'profunc')
+    })
+})
+
+}
+
+// function below adds click events to default project buttons
+import {populateDisplay} from './domLogic.js'
+
+export function defaultButtonLogic() {
+
+
+    const buttons = document.querySelectorAll('.defaultproject')
+    buttons.forEach((elem,ind,arr) => {
+        elem.addEventListener('click', (e) => {
+            import('./projectmaker.js')
+            .then((obj) => {
+    
+            })
+            populateDisplay(e.target.id)
+            // depending on the value of e.target.id, we want to call that specific array
+            // and feed it to a dom function that loops the array and populates the display!
+            // all will be the default arr
+
+            if (e.target.id == "all") {
+                console.log(e.target.id)
+            }
+            else if (e.target.id == "today"){console.log(e.target.id)}
+            else if (e.target.id == "thisweek"){console.log(e.target.id)}
+ 
+
+           
+          
+    
+            
+        })
+    })
+    
+    }
+
+    export function customProjectButtonLogic() {
+
+
+        const buttons = document.querySelectorAll('.customprojecttitle')
+        buttons.forEach((elem,ind,arr) => {
+            elem.addEventListener('click', (e) => {
+                import('./projectmaker.js')
+                .then((obj) => {
+        
+                })
+                populateDisplay(e.target.id)
+                // depending on the value of e.target.id, we want to call that specific array
+                // and feed it to a dom function that loops the array and populates the display!
+                // all will be the default arr
+    
+                if (e.target.id == "all") {
+                    console.log(e.target.id)
+                }
+                else if (e.target.id == "today"){console.log(e.target.id)}
+                else if (e.target.id == "thisweek"){console.log(e.target.id)}
+     
+    
+               
+              
+        
+                
+            })
+        })
+        
+        }
+    
+
+function todoswitcher() {
+    const tododisplay = document.querySelector('.todocontent')
+
+}
+
+
+
     
     // master function to run all functions that add button logic!
     
@@ -645,7 +740,7 @@ function switchCreation() {
     //logic to add events to default project buttons 
     defaultButtonLogic()
     
-    
+    customProjectButtonLogic()
     //logic to add events to custom project buttons 
     customButtonLogic()
    
@@ -653,7 +748,7 @@ function switchCreation() {
     //logic to add events to todo buttons 
     todoButtonLogic()
     
- 
+
  
     switchCreation()
 
@@ -661,7 +756,7 @@ function switchCreation() {
     
     deleteButtonColors() 
     projectsubmitlogic()
-    
+    submitLogic()
     addEventstoSubmitInputs()
    
   

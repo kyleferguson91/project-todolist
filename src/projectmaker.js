@@ -7,14 +7,14 @@
 // to populate the display and not have to differentiate between default vs non
 
 export const defaultprojects = {
-    all: ['all'],
-    today: ['today'],
-    thisweek: ['this week'],
+    all: [{title:'all'}, {title:'all'}],
+    today: [{title:'today'}, {title:'today'}],
+    thisweek: [{title:'thisweek'}, {title:'thisweek'}],
 }
 
 
 export const projects = {
-
+   
 }
 
 // add the appropriate todo's to these projects based on the appropriate dates (datefn!)
@@ -44,6 +44,11 @@ if (projects.hasOwnProperty(projectname)) {
     // eventually we will append todo's to these categories based on some criteria 
 
 projects[projectname] = []
+let result = projectname
+
+projects[projectname].push({title:result})
+projects[projectname].push({title:result})
+console.log(projects)
 
 console.log(projects, projectname)
 
