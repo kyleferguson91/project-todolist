@@ -6,7 +6,7 @@
   \*************************/
 /***/ (() => {
 
-throw new Error("Module parse failed: Unexpected token (1061:28)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| function appendTime() {\n| const time = document.createElement('h4')\n> time.textContent = new Date format('yyyy-mm-dd')\n|     document.querySelector('.columns').appendChild(time)\n| ");
+throw new Error("Module parse failed: Unexpected token (3:17)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| // use this function to render custom projects array that is served from project maker\n| // we will update the array from the project makers function when needed then run the render\n> import icon from ('./images/backgrounds/Curve Line.svg')\n| import { defaultOptions, tokTypes } from 'acorn'\n| import { parseISO } from 'date-fns'");
 
 /***/ })
 
