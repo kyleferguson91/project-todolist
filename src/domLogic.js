@@ -7,6 +7,8 @@ import { da, el } from 'date-fns/locale'
 import {initialproj, initialtodosubmit} from './buttonlogic.js'
 import { defaultprojects } from './projectmaker.js'
 
+
+
 export function renderCustomProjects(value) {
 
  // clear custom project dom elements! otherwise it will just add to them!
@@ -496,7 +498,7 @@ titlesection.appendChild(text)
              
             {
           const expand = document.createElement('img')
-          expand.src = '../src/images/plus-square-svgrepo-com.svg'
+          expand.src = './src/images/plus-square-svgrepo-com.svg'
           expand.classList.add('expandbutton')
           buttoncontainer.appendChild(expand)
 
@@ -704,7 +706,7 @@ else  if (priority.classList.contains('prioritywrapperhigh')) {
                     e.target.parentElement.parentElement.parentElement.classList.remove('large')
 
                     // switch the icon back to a plus!
-                    console.log(e.target.parentElement.parentElement.parentElement.querySelector('img').src='../src/images/plus-square-svgrepo-com.svg')
+                    console.log(e.target.parentElement.parentElement.parentElement.querySelector('img').src='./src/images/plus-square-svgrepo-com.svg')
                    
                    //and remove the added content that the plus added
 
@@ -727,13 +729,13 @@ else  if (priority.classList.contains('prioritywrapperhigh')) {
             // or removing large
 
            if ( e.target.parentElement.parentElement.parentElement.classList.contains('large')) {
-            e.target.src = '../src/images/minus-square-svgrepo-com.svg'
+            e.target.src = './src/images/minus-square-svgrepo-com.svg'
             e.target.parentElement.parentElement.parentElement.appendChild(todoinfo)
            }
             
            
 
-           else {e.target.src = '../src/images/plus-square-svgrepo-com.svg'
+           else {e.target.src = './src/images/plus-square-svgrepo-com.svg'
            e.target.parentElement.parentElement.parentElement.removeChild(e.target.parentElement.parentElement.parentElement.querySelector('.todoinfo'))}
 
 

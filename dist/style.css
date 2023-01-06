@@ -1,4 +1,3 @@
-var(--viewportWidth: calc(100vw - var(--scrollbarWidth)))
 
 body, html {
     margin:0;
