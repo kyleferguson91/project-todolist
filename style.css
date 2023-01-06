@@ -1,6 +1,8 @@
 * {
 box-sizing: border-box;
+
 }
+
 
 .header {
     text-align: center;
@@ -14,9 +16,11 @@ body {
     grid-template-rows: 1fr 7fr 1fr;
 
     height: 100vh;
-    background-color: #c6ebbe;
-   
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%238aa1b1' fill-opacity='0.35'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+   background-image: url('../src/images/backgrounds/Hexagon(1).svg');
+
+   backdrop-filter: blur(7px);
+
 }
 
 
@@ -28,25 +32,35 @@ body {
 
 }
 
+.blurry {
+    backdrop-filter: blur(6px);
+}
 
 .maincontainer {
     width: 85vw;
     height: 84vh;
-    background-color: #FCD3DE;
+    border: 2px solid rgb(96, 96, 96, 0.4);
     border-radius: 20px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr 10fr;
-  overflow: scroll;
+    overflow: scroll;
+
+
     padding: 0rem
 }
 
 .todoheader {
-
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     grid-row: 1/1;
     grid-column: 1/-1;
+    background-color: rgb(175, 208, 169, 0.4);
+    border-radius: 20px 20px 0px 0px;
 
-    background-color: #D7CDCC;
+padding: 1rem;
+   background-size: cover;
+
 text-align: center;
 
     }
@@ -54,16 +68,41 @@ text-align: center;
     .todoheadertext {
         flex-basis: 50%;
         display: inline-block;
-        vertical-align: middle;
+     font-family: Cambria, Cochin, Times, serif;
+     font-weight: normal;
         font-size: 1.5rem;
+        margin: 0;
+ 
+    }
+.columns {
+    display: flex;
+    flex-flow: row;
+    align-items: flex-end;
+    padding-left: 1rem;
+    align-items: center;
+}
+    .columns > * {
+margin: 0;
+    }
+
+    .todologo {
+     
+        border-radius: 20px;
+        width: 80%;
+        
+        align-self: center;
+        justify-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+ 
     }
 
     .todoheaderimage {
-        width: 3rem;
-        height: 3rem;
+        width: 1.5rem;
+        height: 1.5rem;
         vertical-align: middle;
-        display: inline-block;
-        justify-self: left;
+
     }
 
 .projectsection {
@@ -80,20 +119,26 @@ flex-flow: column;
 }
 
 .projectcontent {
-    border: 3px solid red;
+    border-radius: 12px;
+    background-color: rgb(206, 222, 210, 0.4);
+
 height: auto;
 min-height: 70vh;
     display: flex;
     flex-flow: column;
     grid-template-columns: 1fr;
     grid-template-rows: .3fr 40px 1fr auto;
+    font-family: monospace;
     
 }
 
 .projectbartitle {
     text-align: center;
-    font-size: 1.9rem;
+    font-family:  Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.4rem;
+    font-weight: 100;
     margin: 0;
+    margin-bottom: .5rem;
 padding: 0;
 }
 
@@ -112,27 +157,30 @@ padding: 0;
     text-align: left;
 height: min-content;
     margin-bottom: 20px;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1.4rem;
     justify-self: start;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
 
 .defaultproject:hover {
-background-color: grey;
+    background-color: rgb(128, 128, 128, 0.2);
+    border-radius: 20px;
 
     
 
 }
 
 .customprojecttitle:hover {
-    background-color: grey;
+    background-color: rgb(128, 128, 128, 0.2);
+    border-radius: 20px;
 }
 
 
 
 .projectline {
-display: flex;
+
 height: auto;
 
 }
@@ -144,10 +192,10 @@ height: auto;
 
 
 .line {
-    background-color: black;
+    background-color: rgba(93, 93, 93, 0.5);
 
-    width: 95%;
-    height: 10px;
+    width: 85%;
+    height: 5px;
     align-self: center;
     margin-left: auto;
     margin-right: auto;
@@ -171,12 +219,17 @@ font-size: 1.4rem;
     border: none;
     text-align: left;
 height: min-content;
-
-    font-weight: bold;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: normal;
     font-size: 1.4rem;
     justify-self: start;
     display: block;
     width: 100%;
+}
+
+.plusimage {
+    flex-grow: 2;
+
 }
 
 
@@ -187,62 +240,176 @@ height: min-content;
 
 }
 
+.large {
+
+    flex-grow: 0;
+    flex-shrink: 0; 
+    padding: 1rem;
+    min-height: auto;
+}
+
+.quickinfo {
+
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+ 
+
+  align-items: flex-start;
+ padding: .4rem;
+height: auto;
+    font-size: 1.3rem;
+width: auto;
+}
+
+.todoinfo {
+    width: 100%;
+    height: 100%;
+
+    padding: 1rem;
+    border-radius: 0px 0px 10px 10px;
+}
+
+#description {
+    line-height: 1;
+}
+
+#title {
+    line-height: 2;
+}
+
+#date {
+    line-height: 2;
+}
+
 
 .todosection {
-
+   
+    overflow: scroll;
     grid-row: 2;
     grid-column: 2/2;
+display: flex;
+flex-flow: column;
+
+
+grid-template-rows: repeat(auto-fill, minmax(2rem, 3fr));
+
+gap: 2rem;
     padding: 1rem;
+    min-height: auto;
+   
+    border-radius: 20px;
     font-size: 2rem;
 }
 
 .todocontent {
-    border: 3px solid red;
-    display: flex;
-    padding: 10px;
-    font-size: 1.3rem;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(1, 1fr);
 
+background-color: #dbe1df;
+flex-grow: 0;
+border-radius: 10px;
+}
+
+.expandbutton {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.datebutton {
+    width: auto !important;
+
+    border: none;
+    background-color: transparent;
+    border: 1px dashed black;
+
+}
+ 
+.todotitleline {
+    display: inline;
+    margin-bottom: 0;
+padding: 0;
 }
 
 .buttoncontainer {
     display: flex;
- 
- margin-left: auto;
+    overflow: hidden;
+
+
+min-width: 14rem;
+justify-items: start;
+gap: .3rem;
+
 }
 
-.todotitle {
-
+.complete {
+    background-color: lightgreen;
+    border-radius: 10px;
 }
 
-.todobutton {
+.deletewhendone {
+    flex-grow: 1;
+    background-color: rgba(255, 0, 0, 0.4);
+   
+   
+}
+
+
+.prioritywrapperhigh, .prioritywrapperlow, .prioritywrappermed {
+    flex-shrink: 0;
+}
+
+.buttoncontainer > * {
+    display: inline;
+    justify-self: center;
+}
+
+.todotitles {
+margin: 0;
+padding: 0;
+}
+
+.todobutton, .prioritytodobutton {
+    flex-shrink: 0;
     display: inline-block;
     align-self: center;
     justify-self: stretch;
-  
-    height: 100%;
-    width: 40%;
+  max-width: 12.4rem;
+    width: 1.6rem;
+    height: 1.6rem;
     font-size: .8rem;
+  
+
+}
+.todobutton, .todocheckbox {
 
 }
 
 .todobutton:not(:last-of-type) {
-    margin-right: 10px;
+
 }
 
 .footer {
     text-align: center;
 }
 
+.bighide {
+    display: none;
+}
+
 .modal {
 
     width: 100vw;
     height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(15px);
     visibility: hidden;
-    position: fixed;
+    position: absolute;
     opacity: 1;
     transform: scale(1.1);
     transition: visibility 0s linear 0s, opacity .25s 0s, transform .25s;
+ 
 }
 
 .closebutton {
@@ -260,7 +427,12 @@ height: min-content;
     opacity: 1;
     visibility: visible;
     transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+  
+}
+
+.modalback {
+    backdrop-filter: blur(6px);
+    visibility: visible;
 }
 
 .modal-content {
@@ -268,6 +440,7 @@ height: min-content;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 10fr;
     position: absolute;
+    
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -276,6 +449,8 @@ height: min-content;
     height: 60%;
 border-radius: 30px;
 padding: 30px;
+
+z-index: 1;
 
 }
 
@@ -334,17 +509,54 @@ margin-top: 8px;
 }
 
 .redback {
-    background-color: rgb(255, 0, 0, 0.4);
+    background-color: rgb(255, 0, 0, 0.16);
+    border-radius: 20px;
+
 }
+
 
 
 .todoform {
 
-    display: flex;
-    flex-flow: column;
-    height: 100%;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+height: 100%;
+
 }
+
+
+
+.todoform > label {
+    font-size: 1.5rem;
+    margin: 20px;
+}
+
+.submittodo {
+    height: min-content;
+    
+
+    border-radius: 8px;
+    grid-column: 2;
+    justify-self: left;
+    padding: .5rem;
+
+}
+.cancelsubmit {
+    
+    justify-self: left;
+    grid-column: 1;
+    grid-row: 4;
+    padding: 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.todoform > input {
+    border-radius: 5px;
+    align-self: center;
+}
+
+
 
 .projflex {
     display: flex;
@@ -358,9 +570,14 @@ margin-top: 8px;
 
 .titleinputbar {
     width: 100%;
+    
     margin-bottom: .5rem;
     height: 2.5rem;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
+}
+
+#description:horizontal {
+    height: 250px;
 }
 
 .inputgrid {
@@ -397,7 +614,10 @@ justify-content: space-between;
 
 .createnewheading {
     margin: 0;
+    margin-bottom: 1.5rem;
     align-self: center;
+    font-size: 2rem;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .changebg {
@@ -423,12 +643,12 @@ padding: 10px;
 }
 
 .prioritywrapperlow {
-    background-color: rgb(0, 128, 0, 0.5);
+    background-color: rgb(0, 128, 0, 0.2);
     display: inline;
 }
 
 .prioritywrappermed {
-    background-color: rgba(255, 255, 0, 0.5);
+    background-color: rgba(255, 255, 0, 0.2);
     display: inline;
 }
 
@@ -473,7 +693,23 @@ height: 4rem;
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+
     padding: 0px 20px 0px 20px;
+}
+
+.todocheckbox {
+
+  flex-basis: 1.4rem;
+
+margin-top: 0;
+margin-bottom: 0;
+margin-left: 0;
+flex-shrink: 0;
+ 
+}
+
+.prioritywrapperhigh { 
+    flex-shrink: 2;
 }
 
 .customprojecttitle {
@@ -497,23 +733,113 @@ justify-content: center;
     font-size: 1.2rem;
 }
 
+.titlesection {
+    width: 50%;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.timeheader {
+    display: ;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
 
 .projecttitlelabel {
     font-size: 1.8rem;
    }
 
-   
+   @media screen and (max-width: 900px) {
+    
+.maincontainer {
+  
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+
+    
+}
+
+.todoheader {
+    border-radius: 0;
+}
+
+.flexcont {
+    border-radius: 0;
+}
+
+.customprojects {}
+
+#date {
+    width: 100%;
+}
+    
+   }
 
 @media screen and (max-width: 800px) {
+
+    
+  .timeheader {
+    font-size: 1.2rem;
+  }
+
+
+
+.buttoncontainer {
+justify-content: start;
+
+}
+
+.titlesection {
+    margin-bottom: 0rem;
+}
+
+.todoinfo {
+
+    padding: 0rem;
+
+}
+
+
+
+.todoform > input {
+    align-self: stretch
+};
+
 
 .maincontainer {
   
     width: 100vw;
     height: 100vh;
-    grid-template-columns: 1.5fr 2fr;
+    grid-template-columns: minmax(120px, .8fr) 2fr;
+    grid-template-rows: auto 1fr;
+    
 }
 
+body {
+
+}
+
+#date {
+width: 100%;
+}
+
+.todologo {
+grid-column: 1/3;
+width: 100%;
+}
+
+.todoheader {
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+}
+
+body {
+
+}
 
 .inputcontainer {
     padding: 0;
@@ -525,11 +851,14 @@ justify-content: center;
    
    }
 
-.todocontent {
+   .todoheader {
+    display: flex;
+  }
 
-}
 
-   .todobutton {
+
+
+   .todobutton, .prioritytodobutton {
 display: block;
     font-size: 0.8rem;
     padding: 0;
@@ -538,17 +867,52 @@ display: block;
 
 }
 
+#description {
+    line-height: 1.5;
+}
+
+
 
    .todoflex {
     height: 30vh;
 
     
 }
+.todoform > label {
+    font-size: 1.5rem;
+}
+
+
+.large {
+    height: 20rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    overflow: scroll;
+    padding: 0;
+
+
+}
 
    .flexforlabel {
     font-size: .8rem;
 
    }
+
+   
+   .todoform {
+
+    display: flex;
+    flex-flow: column;
+  
+
+}
+
+.todoform > label {
+    margin: 0;
+    font-size: 1rem;
+}
+
 
    .projecttitlelabel {
     font-size: .8rem;
@@ -559,7 +923,7 @@ display: block;
    }
    
 .project {
-    padding: 0;
+    padding: 0px;
     margin: 0px;
     padding: 5%;
 
@@ -573,29 +937,40 @@ display: block;
 }
 
 
+
+
 .projectbartitle {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
 }
 
 .todosection {
-    padding: 0;
-    margin-top: 20px;
+    padding: 0px .5rem 0px .5rem;
+    margin-top: 0px;
+
 }
 
 .projectsection {
     padding: 0;
+
+}
+
+.projectcontent {
+    height: 100%;
 }
 
 .maincontainer {
     padding: 0px;
 }
 
+.todotitles {
+    margin-bottom: 0;
+}
+
 .customprojects {
 
  
-    max-height: 40vh;
-
-    min-height: 40vh;
+    min-height: 38vh;
+    max-height: 38vh;
     }
 
     .customprojecttitle {
@@ -603,15 +978,15 @@ display: block;
         font-weight: normal;
     }
 
-    .todocontent {
+    .quickinfo {
         font-size: 1.4rem;
     }
 
 
 
     .plusbutton {
-        width: 2rem;
-        height: 2rem;
+        width: 4rem;
+        height: 4rem;
   
     
     }
@@ -629,10 +1004,58 @@ display: block;
 
 
 .modal-content {
-
+   
+border-radius: 0;
     width: 90%;
     height: 90%;
+ 
 
 }
+
+.closebutton {
+   
+}
     
+    }
+
+    @media screen and (max-width: 650px) {
+        .quickinfo {
+            flex-flow: column;
+           align-items: baseline;
+
+        }
+
+
+        .titlesection {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+    }
+
+
+    
+    @media screen and (max-width: 450px) {
+
+        .modal-content {
+            padding: 0;
+        }
+        .inputcontainer {
+            padding: 0;
+        }
+        .timeheader {
+   
+            font-size: 1rem;
+           
+        }
+
+        .columns {
+            grid-column: 2;
+         
+       align-self: center;
+        }
+
+        .todoheadertext {
+            font-size: 1.2rem;
+          }
+        
     }
