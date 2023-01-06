@@ -1,1 +1,157 @@
-<meta http-equiv="refresh" content="0; url=https://kyleferguson91.github.io/project-todolist/dist/index.html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../dist/main.js" type="module" de></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+    <div class="modal bighide">
+        <div class="modal-content">
+            <div class="closebuttonbox">
+                <h2 class="createnewheading">Create a new...</h2>
+                <button class="closebutton">X</button>
+            </div>
+            <div class="createnewbox">
+                <button class="todoselect changebg">ToDo</button>
+                <button class="projectselect">Project</button>
+              
+            </div>
+<div class="inputcontainer ">
+
+<div class="inputgrid">
+    
+        <input id="title" type="text" required placeholder="Title" class="titleinputbar"></input>
+        <input id="description" type="text" value="" placeholder="Description" class="titleinputbar"></input>
+    
+    
+         <div class="todoflex">
+    
+                 <div class="flexforlabel"><label for="duedate" >Duedate:</label>
+             <input id="duedate" class="dateinput" type="date"  ></input></div>
+    
+    
+                 <div class="flexforlabel">
+             <label for="priority">Priority:</label>
+                 <div class="prioritybox">
+                 <div class="prioritywrapperlow "><label for="priority-low">L</label><input id="priority-low" class="prioritychoice"  name="priority"  type="radio" value="low" required checked="checked"></div>
+                 <div class="prioritywrappermed "><label for="priority-med">M</label><input id="priority-med" class="prioritychoice"  type="radio" name="priority" value="meidum" required></div>
+                 <div class="prioritywrapperhigh ">    <label for="priority-high">H</label><input id="priority-high" class="prioritychoice"  type="radio" name="priority" value="high" required></div>
+                 </div>
+                 </input></div>
+    
+    
+                 <div class="flexforlabel"><label for="project" required>Project:</label>
+    
+             <select name="project" id="project" class="selectoptions">
+    
+                   </select></div>
+    
+    
+    
+                 <div class="flexforlabel"><label for="completed">Completed:</label><input id="completed" type="checkbox" unchecked></input></div>
+         </div>
+    
+    
+</div>
+    <div class="submitcontainer">
+
+        <button class="submitbutton" type="">Submit</button>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+<div class="project hide">
+
+        <div class="projflex">
+            <label for="projectitle" class="projecttitlelabel">Title</label>
+            <input type="text" name="" class="bigbar" id="projecttitle" maxlength="30" >
+        </div>
+        <div class="submitcontainer">
+            <button type="" class="projectsubmit">Submit</button>
+        </div>
+  
+ 
+</div>
+
+        </div>
+       
+    </div>
+
+
+
+    <div class="header">
+
+    </div>
+
+<div class="flexcont">
+    <div class="maincontainer">
+        <div class="todoheader">
+            <div class="todologo">
+                <h4 class="todoheadertext">To Do List</h4>
+                <img src="../src/images/text-align-center-svgrepo-com.svg" alt="" class="todoheaderimage">
+            </div>
+            <div class="columns">
+        
+
+            </div>
+        </div>
+        <div class="projectsection">
+
+
+            <div class="projectcontent">
+<div class="defaultprojects">
+ 
+
+<button class="defaultproject red" id="all" data-title="all">All</button>
+<button class="defaultproject red" id="today" data-title="today">Today</button>
+<button class="defaultproject red" id="thisweek" data-title="thisweek">This Week</button>
+
+</div>
+                <div class="projectline">
+             <div class="box">       <h3 class="projectbartitle">Projects</h3>
+                <div class="line"></div></div>
+                </div>
+
+
+
+
+       <div class="customprojects">
+
+        
+      
+
+       </div>
+
+       <div class="plusimage">
+        <img src="../src/images/plus-circle-svgrepo-com(6).svg" class="plusbutton" id="plusbutton" alt="">
+       </div>
+
+
+
+            </div>
+        </div>
+        <div class="todosection">
+
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+   
+</div>
+</body>
+</html>
