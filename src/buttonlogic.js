@@ -111,20 +111,20 @@ closelogic()
             // 
            
         
-        e.target.src = './src/images/plus-circle-svgrepo-com(7).svg'
+        e.target.src = '../src/images/plus-circle-svgrepo-com(7).svg'
         
         })
         image.addEventListener('mouseout', (e) => {
         
         
-            e.target.src = './src/images/plus-circle-svgrepo-com(6).svg'
+            e.target.src = '../src/images/plus-circle-svgrepo-com(6).svg'
             
             })
         
             image.addEventListener('mousedown', (e) => {
         
         
-                e.target.src = './src/images/plus-circle-svgrepo-com(8).svg'
+                e.target.src = '../src/images/plus-circle-svgrepo-com(8).svg'
                 
                 })
             
@@ -1115,7 +1115,7 @@ function closelogic() {
      toggleModal()
 
      // reset it to default todo display 
-     console.log('toto')
+  e.stopImmediatePropagation()
      resetTodo()
 
 
