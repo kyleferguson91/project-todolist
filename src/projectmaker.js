@@ -6,17 +6,32 @@
 // it is easier to have a separate default project object as we can just loop over it 
 // to populate the display and not have to differentiate between default vs non
 
+// all key will house array that parses all available project objects and lists them
+// the today and thisweek array will have to do with sorting 
+
+
 export const defaultprojects = {
-    all: [{title:'all'}, {title:'all'}],
-    today: [{title:'today'}, {title:'today'}],
-    thisweek: [{title:'thisweek'}, {title:'thisweek'}],
+    all: [],
+    today: [],
+    thisweek: [],
 }
 
+// this function to populate default projects, which will loop over custom projects!
+
+
+// we will make functions to sort all to create this week and today!
+
+export const projectstest = {
+    2: [{title:'pooragas', duedate: '2022-02-02', description: 'poopooASDASDASD', priority: 'low', index: 0},{title:'pooragas', duedate: '2022-02-02', description: 'poopooASDASDASD', priority: 'low', index: 0},{title:'pooragas', duedate: '2022-02-02', description: 'poopooASDASDASD', priority: 'low', index: 0},{title:'pooragas', duedate: '2023-02-02', description: 'poopooASDASDASD', priority: 'low', index: 0}],
+    3: [{title:'pooragas', duedate: '2022-02-02', description: 'poopooASDASDASD', priority: 'low', index: 0}],
+    5: [{title:'pooragas', duedate: '2022-02-02', description: 'poopooASDASDASD', priority: 'low', index: 0}]
+}
 
 export const projects = {
-   
+  
 }
 
+//2: [{title:'pooragas', duedate: '2022-02-02', description: 'poopooASDASDASD', priority: 'low', index: 0},]
 // add the appropriate todo's to these projects based on the appropriate dates (datefn!)
 
 
@@ -36,7 +51,10 @@ if (projectname == "") {return}
 
 if (projects.hasOwnProperty(projectname)) {
     console.log('logs that property exists within projectmaker.js')
- alert('Project exists, please choose another name!')
+
+    return false
+    // call dom function to turn field red and change placeholder to exists!
+
 
 }
 
@@ -46,11 +64,14 @@ if (projects.hasOwnProperty(projectname)) {
 projects[projectname] = []
 let result = projectname
 
-projects[projectname].push({title:result})
-projects[projectname].push({title:result})
-console.log(projects)
 
-console.log(projects, projectname)
+
+console.log('DEFAULT PROJS ARRAY!!!')
+console.log(projects, 'current projects object');
+
+  
+
+
 
 return;
 }

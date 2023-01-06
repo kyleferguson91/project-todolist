@@ -11,13 +11,14 @@ import { compareAsc, format } from 'date-fns'
 import('./domLogic.js')
 .then((obj) => {
     obj.render()
+
 })
 
 
 
 
 
-const date = format(new Date(2014, 1, 11), 'yyyy-MM-dd')
+export const date = format(new Date(), 'yyyy-MM-dd')
 console.log(date)
 
 
