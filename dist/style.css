@@ -781,7 +781,7 @@ justify-content: center;
     height: 100vh;
     border-radius: 0;
 
-    
+    border: none;
 }
 
 .todoheader {
