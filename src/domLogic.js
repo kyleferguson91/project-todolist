@@ -1,11 +1,11 @@
 // use this function to render custom projects array that is served from project maker
 // we will update the array from the project makers function when needed then run the render
 
-import { defaultOptions, tokTypes } from 'acorn'
+
 import { parseISO } from 'date-fns'
-import { da, el } from 'date-fns/locale'
+
 import {initialproj, initialtodosubmit} from './buttonlogic.js'
-import { defaultprojects } from './projectmaker.js'
+
 
 
 
