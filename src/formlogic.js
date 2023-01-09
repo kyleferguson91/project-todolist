@@ -3,6 +3,7 @@ import { projects, defaultprojects } from './projectmaker.js'
 const completed = document.querySelector('#completed').checked
 
 
+
 // logic to determine priority
 // series of radio buttons loop through them
 

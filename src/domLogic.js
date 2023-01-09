@@ -1,6 +1,13 @@
 // use this function to render custom projects array that is served from project maker
 // we will update the array from the project makers function when needed then run the render
 
+import plusquare from '../src/images/plus-square-svgrepo-com.svg'
+
+import minussquare from '../src/images/minus-square-svgrepo-com.svg'
+
+import headerimage from '../src/images/text-align-center-svgrepo-com.svg'
+
+import mainpagebackground from '../src/images/backgrounds/Hexagon(1).svg'
 
 import { parseISO } from 'date-fns'
 
@@ -209,6 +216,11 @@ export function render(){
     inputDate()
 
  
+// set background image
+
+
+document.body.style.backgroundImage =`url(${mainpagebackground})`
+
 import('./buttonlogic.js')
 .then((o) => {
 
@@ -234,6 +246,15 @@ initialtodosubmit()
 
 
 export function populateDisplay(projectobject ) {
+
+    // set todoheader image
+
+    document.querySelector('.todoheaderimage').src = headerimage
+
+    // set background image
+
+    document.body.style.backgroundImage =`url(${mainpagebackground})`
+
 
 
     // we are populating the dom, we can also switch the highlighted project!
@@ -498,7 +519,7 @@ titlesection.appendChild(text)
              
             {
           const expand = document.createElement('img')
-          expand.src = '/src/images/plus-square-svgrepo-com.svg'
+          expand.src = plusquare
           expand.classList.add('expandbutton')
           buttoncontainer.appendChild(expand)
 
@@ -706,7 +727,7 @@ else  if (priority.classList.contains('prioritywrapperhigh')) {
                     e.target.parentElement.parentElement.parentElement.classList.remove('large')
 
                     // switch the icon back to a plus!
-                    console.log(e.target.parentElement.parentElement.parentElement.querySelector('img').src='/src/images/plus-square-svgrepo-com.svg')
+                    console.log(e.target.parentElement.parentElement.parentElement.querySelector('img').src= plusquare)
                    
                    //and remove the added content that the plus added
 
@@ -729,13 +750,13 @@ else  if (priority.classList.contains('prioritywrapperhigh')) {
             // or removing large
 
            if ( e.target.parentElement.parentElement.parentElement.classList.contains('large')) {
-            e.target.src = '/src/images/minus-square-svgrepo-com.svg'
+            e.target.src = minussquare
             e.target.parentElement.parentElement.parentElement.appendChild(todoinfo)
            }
             
            
 
-           else {e.target.src = '/src/images/plus-square-svgrepo-com.svg'
+           else {e.target.src = plusquare
            e.target.parentElement.parentElement.parentElement.removeChild(e.target.parentElement.parentElement.parentElement.querySelector('.todoinfo'))}
 
 

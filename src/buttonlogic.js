@@ -1,4 +1,11 @@
 import { formController as formSubmit  } from './formlogic.js'
+
+import mainplusimage from '../src/images/plus-circle-svgrepo-com(6).svg'
+import hoverplusimage from '../src/images/plus-circle-svgrepo-com(7).svg'
+import clickplusimage from '../src/images/plus-circle-svgrepo-com(8).svg'
+
+
+
 // reset input function
 export let currentselectedproject = ""
 export function resetInputs() {
@@ -111,20 +118,22 @@ closelogic()
             // 
            
         
-        e.target.src = '/src/images/plus-circle-svgrepo-com(7).svg'
+        e.target.src = hoverplusimage
+     
+  
         
         })
         image.addEventListener('mouseout', (e) => {
         
         
-            e.target.src = '/src/images/plus-circle-svgrepo-com(6).svg'
+            e.target.src = mainplusimage
             
             })
         
             image.addEventListener('mousedown', (e) => {
         
         
-                e.target.src = '/src/images/plus-circle-svgrepo-com(8).svg'
+                e.target.src = clickplusimage
                 
                 })
             
