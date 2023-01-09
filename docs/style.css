@@ -1100,7 +1100,7 @@ border-radius: 0;
     }
 
     .buttoncontainer > button, .buttoncontainer > img, .buttoncontainer > input {
-        transform: scale(.8);
+   
     }
 
     .buttoncontainer {
@@ -1189,9 +1189,13 @@ border-radius: 0;
         .customprojects {
 
             min-height: auto;
+            max-height: 30vh;
       
                 }
 
+                .projectcontent {
+                    height: 100vh;
+                }
         .todoheadertext {
             margin-right: .1rem;
         }
@@ -1327,3 +1331,13 @@ padding: 2px;
   
 }
 }
+
+@media screen and (max-width: 380px) {
+
+    .customprojects {
+
+        min-height: auto;
+        max-height: 20vh;
+  
+            }
+        }
