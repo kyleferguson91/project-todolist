@@ -54,22 +54,46 @@ body {
     border-radius: 20px;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 10fr;
-    overflow: hidden;
+    grid-template-rows: 1fr 20fr;
+    overflow: auto;
 
 
     padding: 0rem
 }
 
+.projecttag {
+    font-weight: 200;
+    justify-self: flex-end;
+    margin-right: 5%;
+}
+
+.projectnametag {
+    font-weight: normal;
+
+    margin: 0;
+align-self: center;
+    justify-self: end;
+  
+}
+
+.projectnamecontainer {
+   display: flex;
+   align-items: center;
+   justify-content: start;
+
+}
+
 .todoheader {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(2, 1fr);
     grid-row: 1/1;
     grid-column: 1/-1;
     background-color: rgb(175, 208, 169, 0.4);
     border-radius: 20px 20px 0px 0px;
-
-padding: 1rem;
+height: auto;
+padding: 0rem;
+margin: 0;
    background-size: cover;
 
 text-align: center;
@@ -91,6 +115,7 @@ text-align: center;
     align-items: flex-end;
     padding-left: 1rem;
     align-items: center;
+    justify-content: center;
 }
     .columns > * {
 margin: 0;
@@ -237,6 +262,9 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     justify-self: start;
     display: block;
     width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+   
 }
 
 .plusimage {
@@ -323,10 +351,11 @@ gap: 2rem;
 display: grid;
 grid-template-columns: 1fr;
 grid-template-rows: repeat(1, 1fr);
-
+z-index: -1;
 background-color: #dbe1df;
 flex-grow: 0;
 border-radius: 10px;
+overflow: auto;
 }
 
 .expandbutton {
@@ -352,7 +381,7 @@ padding: 0;
 .buttoncontainer {
     display: flex;
 
-
+z-index: -1;
 
 min-width: 16rem;
 justify-items: start;
@@ -384,6 +413,7 @@ gap: .3rem;
 
 .todotitles {
 margin: 0;
+
 padding: 0;
 }
 
@@ -472,7 +502,6 @@ border-radius: 30px;
 box-sizing: border-box;
 padding: 2rem;
 
-z-index: 1;
 
 }
 
@@ -532,8 +561,8 @@ margin-top: 8px;
 
 .redback {
     background-color: rgb(255, 0, 0, 0.16);
-  
-    border-radius: 20px;
+ 
+    border-radius: 10px;
 }
 
 input.redback {
@@ -578,7 +607,7 @@ max-width: 100%;
     padding: 0.5rem;
     border-radius: 8px;
     text-align: center;
-    align-self: stretch;
+    align-self: flex-start;
 }
 
 .todoform > input {
@@ -718,9 +747,12 @@ height: 4rem;
 }
 
 .projectbuttons {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    justify-items: right;
     margin-bottom: 20px;
+
 
     padding: 0px 20px 0px 20px;
 }
@@ -741,7 +773,9 @@ flex-shrink: 0;
 }
 
 .customprojecttitle {
-
+ 
+    width: 150%;
+    overflow: auto;
 }
 
 .deleteprojectbutton {
@@ -765,11 +799,14 @@ justify-content: center;
     width: 50%;
     overflow: hidden;
     margin-bottom: 0;
+max-width: 14rem;
+
 }
 
 .timeheader {
-    
+
     font-size: 1.6rem;
+   
     font-weight: normal;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -780,6 +817,17 @@ justify-content: center;
    }
 
    @media screen and (max-width: 900px) {
+
+    .quickinfo {
+        flex-flow: column;
+    
+      }
+    
+
+    .titlesection {
+max-width: 13rem;
+        
+    }
     
 .maincontainer {
   
@@ -806,6 +854,10 @@ justify-content: center;
 }
 
 @media screen and (max-width: 800px) {
+
+    .cancelsubmit {
+        align-self: stretch;
+    }
 
     
   .timeheader {
@@ -866,6 +918,7 @@ width: 100%;
     border-radius: 0;
 }
 
+
 body {
 
 }
@@ -880,9 +933,7 @@ body {
    
    }
 
-   .todoheader {
-    display: flex;
-  }
+
 
 
 
@@ -1040,7 +1091,28 @@ border-radius: 0;
     height: 95%;
  
 
+
+
+
 }
+
+
+.project {
+    justify-content: flex-start;
+    }
+
+    .buttoncontainer > button, .buttoncontainer > img, .buttoncontainer > input {
+        transform: scale(.8);
+    }
+
+    .buttoncontainer {
+        gap: 0;
+        padding: 0;
+    }
+
+    .deletetodobutton {
+        max-width: 4rem;
+    }
 
 .closebutton {
    
@@ -1059,26 +1131,87 @@ border-radius: 0;
         .titlesection {
             margin-bottom: 1rem;
             font-size: 1.2rem;
+
         }
 
+        .timeheader {
+            padding: .51rem;
+            font-size: 1rem;
+        }
+
+        .projectnametag {
+
+            align-self: center;
+            font-size: 1.2rem;
    
+           }
+
+           .projecttag {
+            align-self: center;
+            font-size: 1.3rem;
+            
+            word-wrap: break-word;
+            word-break: break-all;
+            margin: 0;
+            margin-right: 2rem;
+           }
+
+        .columns {
+            grid-row: 1;
+            grid-column: 1;
+
+        }
+
+        .todologo {
+            grid-row: 1;
+        }
+        .projecttag {
+   
+        }
+
+
+   .todoheader {
+
+   }
     }
 
 
     
     @media screen and (max-width: 450px) {
 
+
+        .todologo {
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+   .projecttag {
+    font-size: 1rem;
+    justify-self: center;
+    align-self: center;
+    margin: 0;
+   }
+   .timeheader {
+    margin: 0;
+    font-size: .8rem;
+}
+
+   .projectnametag {
+    font-size: 1rem;
+    justify-self: flex-start;
+    align-self: center;
+    word-wrap: break-word;
+    word-break: break-all;
+   }
+
+   .projectnamecontainer {}
         .modal-content {
             padding: 2rem;
         }
         .inputcontainer {
             padding: 0;
         }
-        .timeheader {
-   
-            font-size: 1rem;
-           
-        }
+    
 
         .columns {
             grid-column: 2;
@@ -1087,7 +1220,7 @@ border-radius: 0;
         }
 
         .todoheadertext {
-            font-size: 1.2rem;
+            font-size: 1.0rem;
           }
         
 .maincontainer {
@@ -1155,6 +1288,12 @@ padding: 2px;
   .quickinfo {
     width: 90vw;
   }
+
+#projecttitle {
+    font-size: 1rem;
+}
+
+
 
     }
 

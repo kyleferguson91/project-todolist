@@ -946,7 +946,7 @@ import {populateDisplay, removeRed} from './domLogic.js'
 import { formController } from './formlogic.js'
 import { el, tr } from 'date-fns/locale'
 import { sub } from 'date-fns'
-
+let proname = document.querySelector('.projectnametag')
 export function defaultButtonLogic() {
 
 
@@ -968,6 +968,8 @@ export function defaultButtonLogic() {
           
             populateDisplay(e.target.id)
 
+          
+        
 
             // depending on the value of e.target.id, we want to call that specific array
             // and feed it to a dom function that loops the array and populates the display!
@@ -980,11 +982,13 @@ export function defaultButtonLogic() {
           if (e.target.id == "all") {
             console.log(e.target.id)
             e.target.classList.add('redback')
-           
+            proname.textContent = 'All'
         }
         else if (e.target.id == "today"){
+            proname.textContent = 'Today'
       
-            console.log(e.target.id)
+    
+            
          
         
             e.target.classList.toggle('redback')
@@ -999,9 +1003,13 @@ export function defaultButtonLogic() {
             console.log(e.target.id)
             e.target.classList.add('redback')
 
-
+            proname.textContent = ""
+            proname.textContent = 'This Week'
             populateDisplay('thisweek')
         }
+
+   
+       
         
            })
 
@@ -1034,8 +1042,21 @@ export function defaultButtonLogic() {
                 // all will be the default arr
 
       
-                 
+                 // this is the clicked project, display it under todo list!
+       
+                    let p = document.createElement('p')
                     console.log(e.target.dataset.title)
+                  
+                            proname.textContent = ""
+                            proname.textContent = e.target.dataset.title
+                            
+                        
+                    
+
+          
+                    
+
+
                 import('./domLogic.js')
                 .then((o) => {
                     o.removeRed()

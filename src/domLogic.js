@@ -285,21 +285,33 @@ const todoarea = document.querySelector('.todosection')
 // set the display to be blank!
 
 todoarea.innerHTML = ""
+let proname = document.querySelector('.projectnametag')
 
 if (projectobject == "All" || projectobject == "all") {projectset = "defaultprojects"
 // ensure all is highlighted!!
 document.querySelectorAll('.red').forEach((elem) => {
     elem.classList.remove('redback')
-    if (elem.dataset.title == "all" ) {elem.classList.add('redback')}
+    if (elem.dataset.title == "all" ) {elem.classList.add('redback')
+    proname.textContent = ""
+    proname.textContent = "All"}
 })
 
 }
 
-else if (projectobject == "today") {projectset = "defaultprojects"}
+else if (projectobject == "today") {projectset = "defaultprojects"
+proname.textContent = ""
+proname.textContent = "Today"
+}
 
-else if (projectobject == "thisweek") {projectset = "defaultprojects"}
+else if (projectobject == "thisweek") {projectset = "defaultprojects"
+proname.textContent = ""
+proname.textContent = "This Week"
+}
 
-else {projectset = 'projects'}
+else {projectset = 'projects'
+proname.textContent = ""
+proname.textContent = projectobject
+}
 
 
 
