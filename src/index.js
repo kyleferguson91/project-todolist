@@ -19,4 +19,3 @@ import('./domLogic.js')
 export const date = format(new Date(), 'yyyy-MM-dd')
 console.log(date)
 
-

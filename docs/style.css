@@ -146,7 +146,7 @@ margin: 0;
     grid-row: 2;
     grid-column: 1/1;
     padding: 1rem;
-       height: auto;
+
 display: flex;
 flex-flow: column;
 
@@ -157,9 +157,10 @@ flex-flow: column;
 .projectcontent {
     border-radius: 12px;
     background-color: rgb(206, 222, 210, 0.4);
+    
 
 height: auto;
-min-height: 70vh;
+
     display: flex;
     flex-flow: column;
     grid-template-columns: 1fr;
@@ -245,7 +246,7 @@ height: auto;
 
 overflow-y: auto;
 max-height: 25vh;
-min-height: 35vh;
+min-height: 30vh;
 font-size: 1.4rem;
 
 
@@ -268,7 +269,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .plusimage {
-    flex-grow: 2;
+  
 
 }
 
@@ -351,11 +352,11 @@ gap: 2rem;
 display: grid;
 grid-template-columns: 1fr;
 grid-template-rows: repeat(1, 1fr);
-z-index: -1;
+
 background-color: #dbe1df;
 flex-grow: 0;
 border-radius: 10px;
-overflow: auto;
+
 }
 
 .expandbutton {
@@ -381,7 +382,6 @@ padding: 0;
 .buttoncontainer {
     display: flex;
 
-z-index: -1;
 
 min-width: 16rem;
 justify-items: start;
@@ -832,9 +832,10 @@ max-width: 13rem;
 .maincontainer {
   
     width: 100vw;
-    height: 100vh;
+
     border-radius: 0;
     overflow-y: auto;
+
     border: none;
 }
 
@@ -868,7 +869,7 @@ max-width: 13rem;
 
 
 .buttoncontainer {
-justify-content: start;
+
 
 }
 
@@ -1117,54 +1118,57 @@ border-radius: 0;
 .closebutton {
    
 }
+
+.quickinfo {
+    flex-flow: column;
+   align-items: baseline;
+
+}
+
+
+.titlesection {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+
+}
+
+.timeheader {
+    padding: .51rem;
+    font-size: 1rem;
+}
+
+.projectnametag {
+
+    align-self: center;
+    font-size: 1.2rem;
+
+   }
+
+   .projecttag {
+    align-self: center;
+    font-size: 1.3rem;
+    
+    word-wrap: break-word;
+    word-break: break-all;
+    margin: 0;
+    margin-right: 2rem;
+   }
+
+.columns {
+    grid-row: 1;
+    grid-column: 2;
+
+}
+
+.todologo {
+    grid-row: 1;
+    grid-column: 1;
+}
     
     }
 
     @media screen and (max-width: 650px) {
-        .quickinfo {
-            flex-flow: column;
-           align-items: baseline;
-
-        }
-
-
-        .titlesection {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-
-        }
-
-        .timeheader {
-            padding: .51rem;
-            font-size: 1rem;
-        }
-
-        .projectnametag {
-
-            align-self: center;
-            font-size: 1.2rem;
-   
-           }
-
-           .projecttag {
-            align-self: center;
-            font-size: 1.3rem;
-            
-            word-wrap: break-word;
-            word-break: break-all;
-            margin: 0;
-            margin-right: 2rem;
-           }
-
-        .columns {
-            grid-row: 1;
-            grid-column: 1;
-
-        }
-
-        .todologo {
-            grid-row: 1;
-        }
+       
         .projecttag {
    
         }
@@ -1293,6 +1297,10 @@ padding: 2px;
     font-size: 1rem;
 }
 
+.todoheader {
+    padding: .5rem;
+
+}
 
 
     }

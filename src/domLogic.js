@@ -546,7 +546,7 @@ titlesection.appendChild(text)
           const expand = document.createElement('img')
           expand.src = plusquare
           expand.classList.add('expandbutton')
-          buttoncontainer.appendChild(expand)
+       
 
           // add an event to each expand button!
           
@@ -798,7 +798,7 @@ else  if (priority.classList.contains('prioritywrapperhigh')) {
 
      
           })
-            
+          buttoncontainer.appendChild(expand)
 
             }
 
@@ -1043,6 +1043,7 @@ else if (prop.completed == false) {input.removeAttribute('checked')}
 
 
     appendTime()
+
 
 
 

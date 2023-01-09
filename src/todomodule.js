@@ -34,6 +34,8 @@ export function createTodo(title, description, duedate, priority,  project, comp
     updateAll() 
     
 
+    
+
 
     return {title, description, duedate, priority,  project, completed}
 }
