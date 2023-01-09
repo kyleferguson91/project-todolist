@@ -9,7 +9,9 @@ body, html {
     box-sizing: inherit;
 }
 
-
+.red {
+    -webkit-text-fill-color: black;
+}
   
 
 .header {
@@ -1087,4 +1089,45 @@ border-radius: 0;
             font-size: 1.2rem;
           }
         
+.maincontainer {
+
+
+}
+
+.projectsection {
+
+}
+
+.buttoncontainer {
+padding: 0;
+}
+.customprojecttitle   {
+
+
+    display: flex;
+
+
+
+}
+
+button.customprojecttitle {
+    flex-flow: column;
+    flex-wrap: wrap;
+    font-size: 1rem;
+}
+
+
+
+
+.projectbuttons {
+    box-sizing: border-box;
+    flex-flow: row;
+padding: 2px;
+
+}
+
+.deleteprojectbutton {
+    align-self: flex-end;
+}
+
     }
