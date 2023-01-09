@@ -1037,7 +1037,7 @@ display: block;
 }
 
 .projectcontent {
-    height: 100%;
+    height: auto;
 }
 
 .maincontainer {
@@ -1051,8 +1051,8 @@ display: block;
 .customprojects {
 
  
-    min-height: 38vh;
-    max-height: 38vh;
+    min-height: 30vh;
+    max-height: 30vh;
     }
 
     .customprojecttitle {
