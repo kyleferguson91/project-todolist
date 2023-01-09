@@ -3,6 +3,8 @@
 
 import plusquare from '../src/images/plus-square-svgrepo-com.svg'
 
+import mainplusimage from '../src/images/plus-circle-svgrepo-com(6).svg'
+import hoverplusimage from '../src/images/plus-circle-svgrepo-com(7).svg'
 import minussquare from '../src/images/minus-square-svgrepo-com.svg'
 
 import headerimage from '../src/images/text-align-center-svgrepo-com.svg'
@@ -221,6 +223,13 @@ export function render(){
 
 document.body.style.backgroundImage =`url(${mainpagebackground})`
 
+
+
+    // set main plus image 
+
+
+    document.querySelector('.plusbutton').src = mainplusimage
+   
 import('./buttonlogic.js')
 .then((o) => {
 
@@ -254,6 +263,10 @@ export function populateDisplay(projectobject ) {
     // set background image
 
     document.body.style.backgroundImage =`url(${mainpagebackground})`
+
+    // set main plus image 
+
+    document.querySelector('.plusbutton').src = mainplusimage
 
 
 
@@ -660,17 +673,25 @@ else  if (priority.classList.contains('prioritywrapperhigh')) {
              
                     // if it is today, change the text to Due Today!
                     if (date.value == o.date || date.textContent == o.date) {
+                       // although if status is complete, keep date text as 'DONE'
+                        if (prop.completed == true ) { e.target.parentElement.parentElement.querySelector('.datebutton').textContent = "DONE!"
+                  }
+                        else if (prop.completed == false) { e.target.parentElement.parentElement.querySelector('.datebutton').textContent = "DUE TODAY"}
                        
-                        
-                        e.target.parentElement.parentElement.querySelector('.datebutton').textContent = "DUE TODAY"
                     }
                     
                  else {   // if it is not today
                     // leave date value unchanged
                     // and update the divv with date value!
                     console.log('today', date.value, o.date)
-                    e.target.parentElement.parentElement.querySelector('.datebutton').textContent = date.value}
-
+                    if (prop.completed == true) { e.target.parentElement.parentElement.querySelector('.datebutton').textContent ='DONE!'}
+                
+                else {  e.target.parentElement.parentElement.querySelector('.datebutton').textContent = date.value}
+                }
+                    
+                  
+                   
+                 
                 })
                
                 
@@ -1010,6 +1031,9 @@ else if (prop.completed == false) {input.removeAttribute('checked')}
 
 
     appendTime()
+
+
+
 
 }
 

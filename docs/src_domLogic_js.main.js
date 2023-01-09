@@ -6,7 +6,7 @@
   \*************************/
 /***/ (() => {
 
-throw new Error("Module parse failed: The keyword 'let' is reserved (253:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|   \n| \n> let project = \"\"\n| let projectset = \"\"\n| ");
+throw new Error("Module parse failed: Unexpected token (689:18)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|                     if (prop.completed == true) { e.target.parentElement.parentElement.querySelector('.datebutton').textContent ='DONE!'}}\n|                     \n>                   else if (prop.completed == false ) {  e.target.parentElement.parentElement.querySelector('.datebutton').textContent = date.value}\n|                    \n| ");
 
 /***/ })
 

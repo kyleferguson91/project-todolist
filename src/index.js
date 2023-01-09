@@ -13,7 +13,6 @@ import('./domLogic.js')
 
 })
 
-// set background image..
 
 
 
