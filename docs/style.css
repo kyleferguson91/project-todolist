@@ -578,7 +578,7 @@ max-width: 100%;
     padding: 0.5rem;
     border-radius: 8px;
     text-align: center;
-    align-self: flex-start;
+    align-self: stretch;
 }
 
 .todoform > input {
@@ -800,11 +800,10 @@ justify-content: center;
 
 .customprojects {}
 
-#date {
-    width: 100%;
+
+     
+
 }
-    
-   }
 
 @media screen and (max-width: 800px) {
 
@@ -1061,6 +1060,8 @@ border-radius: 0;
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
+
+   
     }
 
 
@@ -1130,4 +1131,40 @@ padding: 2px;
     align-self: flex-end;
 }
 
+#date {
+    width: 100%;
+}
+    
+.todocontent {
+   width: 90vw;
+}
+
+.todoform > * {
+    max-width: 60vw;
+  }
+
+  #date {
+    max-width: 60vw;
+  }
+
+  .todocontent {
+    width: 80vw;
+    overflow: hidden;
+  }
+
+  .quickinfo {
+    width: 90vw;
+  }
+
     }
+
+     @media screen and (-webkit-min-device-pixel-ratio:0)
+{
+
+
+ .redback {
+    background-color: rgb(255, 0, 0, 0.16);
+  
+  
+}
+}
