@@ -105,8 +105,9 @@ text-align: center;
         display: inline-block;
      font-family: Cambria, Cochin, Times, serif;
      font-weight: normal;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         margin: 0;
+        margin-right: 1rem;
  
     }
 .columns {
@@ -1049,12 +1050,7 @@ display: block;
     margin-bottom: 0;
 }
 
-.customprojects {
 
- 
-    min-height: 30vh;
-    max-height: 30vh;
-    }
 
     .customprojecttitle {
         font-size: 1.2rem;
@@ -1183,7 +1179,22 @@ border-radius: 0;
 
     
     @media screen and (max-width: 450px) {
+        .defaultprojects {
+          padding: .1rem;
+        }
+        
+        .plusbutton {
+            margin-top: 2rem;
+        }
+        .customprojects {
 
+            min-height: auto;
+      
+                }
+
+        .todoheadertext {
+            margin-right: .1rem;
+        }
 
         .todologo {
             grid-row: 1;
@@ -1198,7 +1209,7 @@ border-radius: 0;
    }
    .timeheader {
     margin: 0;
-    font-size: .8rem;
+    font-size: 1.0rem;
 }
 
    .projectnametag {
