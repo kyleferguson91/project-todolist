@@ -2,7 +2,7 @@
 // we will update the array from the project makers function when needed then run the render
 
 import plusquare from '../src/images/plus-square-svgrepo-com.svg'
-
+import {date as today}  from './index.js'
 import mainplusimage from '../src/images/plus-circle-svgrepo-com(6).svg'
 import hoverplusimage from '../src/images/plus-circle-svgrepo-com(7).svg'
 import minussquare from '../src/images/minus-square-svgrepo-com.svg'
@@ -15,6 +15,7 @@ import mainpagebackground from '../src/images/backgrounds/Hexagon(1).svg'
 import { parseISO } from 'date-fns'
 
 import {initialproj, initialtodosubmit} from './buttonlogic.js'
+import { toUnicode } from 'punycode'
 
 
 
@@ -1137,13 +1138,18 @@ function appendTime() {
 
         const time = document.createElement('h4')
         time.classList.add('timeheader')
+
         let day = date.format(new Date(), 'EEEE')
-        let daynumber = date.format(new Date(), 'eo')
+        let daynumber = date.format(new Date(), 'ee')
         let month = date.format(new Date(), 'MMMM')
         let year = date.format(new Date(), 'y')
-        time.textContent = `${day}, the ${daynumber} day of ${month} ${year}!`
+
+        console.log(day, daynumber, year)
+        time.textContent = today
         const headerdiv = document.querySelector('.columns')
         headerdiv.textContent = ""
+
+
             headerdiv.appendChild(time)
         
 

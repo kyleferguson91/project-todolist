@@ -16,6 +16,6 @@ import('./domLogic.js')
 
 
 
-export const date = format(new Date(), 'yyyy-MM-dd')
+export const date = format(new Date(), 'EEEE, LLLL dd, yyyy')
 console.log(date)
 
