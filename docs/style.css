@@ -556,6 +556,9 @@ margin-top: 8px;
  
     border-radius: 10px;
 }
+.red.redback {
+    background-color: lightgray;
+}
 
 input.redback {
     border-radius: 0px;
@@ -1290,7 +1293,7 @@ padding: 2px;
 
 
  .redback {
-    background-color: rgb(211, 211, 211, 0.6);
+
   
   
 }
