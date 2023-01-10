@@ -320,6 +320,15 @@ todoproject = selectedproj.value
         }
         })
      
+        selectedproj.addEventListener('tap', (e) => {
+
+            e.stopImmediatePropagation()
+                  if (e.target.value == "") {          }
+                  else { todoproject = e.target.value
+                   
+               }
+               })
+            
   
      
      submitpriority.forEach(elem => {
