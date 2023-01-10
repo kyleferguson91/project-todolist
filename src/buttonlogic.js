@@ -324,7 +324,7 @@ todoproject = selectedproj.value
 
             e.stopImmediatePropagation()
                   if (e.target.value == "") {          }
-                  else { todoproject = e.target.value
+                  else { todoproject = 'ggg'
                    
                }
                })
