@@ -313,11 +313,11 @@ todoproject = selectedproj.value
 
      submitproject.forEach((elem) => {
    
-        elem.addEventListener('click', (e) => {
+        elem.addEventListener('click tap input', (e) => {
       
            if (e.target.value == "") {          }
            else { todoproject = e.target.value
- 
+            
         }
         })
      })
