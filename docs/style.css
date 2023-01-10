@@ -1206,8 +1206,12 @@ border-radius: 0;
             font-size: 1.0rem;
           }
         
-
-
+.todoheader {
+    grid-template-rows: 1fr;
+}
+.timeheader {
+    font-size: .9rem;
+}
 
 .buttoncontainer {
 padding: 0;
