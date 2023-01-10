@@ -320,7 +320,7 @@ todoproject = selectedproj.value
         }
         })
      
-        selectedproj.addEventListener('tap', (e) => {
+        selectedproj.addEventListener('touchstart', (e) => {
 
             e.stopImmediatePropagation()
                   if (e.target.value == "") {          }
@@ -954,6 +954,7 @@ import {populateDisplay, removeRed} from './domLogic.js'
 import { formController } from './formlogic.js'
 import { el, tr } from 'date-fns/locale'
 import { sub } from 'date-fns'
+import { compareDocumentPosition } from 'domutils'
 let proname = document.querySelector('.projectnametag')
 export function defaultButtonLogic() {
 
