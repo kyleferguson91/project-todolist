@@ -809,6 +809,10 @@ justify-content: center;
 
    @media screen and (max-width: 900px) {
 
+    .todoheadertext, .todoheaderimage {
+        margin-top: 1rem;
+      }
+
     .quickinfo {
         flex-flow: column;
     
@@ -1134,9 +1138,7 @@ border-radius: 0;
     grid-row: 1;
     grid-column: 1;
 }
-.todoheadertext {
-    margin-top: 1rem;
-  }
+
 
     }
 
@@ -1151,6 +1153,11 @@ border-radius: 0;
         .defaultprojects {
           padding: .1rem;
         }
+
+        
+    .todoheadertext, .todoheaderimage {
+        margin-top: 0rem;
+      }
         
         .plusbutton {
             margin-top: 2rem;
