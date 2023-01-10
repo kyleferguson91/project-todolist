@@ -265,7 +265,7 @@ function addEventstoSubmitInputs() {
     const submitpriority = document.querySelectorAll('input[type="radio"]')
     const submitcompleted = document.querySelector('#completed')
     const submitdate = document.querySelector('#duedate')
-    const submitproject = document.querySelectorAll('option')
+    const submitproject = document.querySelector('option')
     const selectedproj = document.querySelector('.selectoptions')
    
 
@@ -311,16 +311,15 @@ todoproject = selectedproj.value
        
      })
 
-     submitproject.forEach((elem) => {
-   
-        elem.addEventListener('click tap input', (e) => {
-      
+     selectedproj.addEventListener('click', (e) => {
+
+     e.stopImmediatePropagation()
            if (e.target.value == "") {          }
            else { todoproject = e.target.value
             
         }
         })
-     })
+     
   
      
      submitpriority.forEach(elem => {
