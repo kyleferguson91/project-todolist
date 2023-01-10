@@ -315,19 +315,12 @@ todoproject = selectedproj.value
 
      e.stopImmediatePropagation()
            if (e.target.value == "") {          }
-           else { todoproject = 'ggg'
+           else { todoproject = e.target.value
             
         }
         })
      
-        selectedproj.addEventListener('touchstart', (e) => {
 
-            e.stopImmediatePropagation()
-                  if (e.target.value == "") {          }
-                  else { todoproject = 'ggg'
-                   
-               }
-               })
             
   
      

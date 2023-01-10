@@ -1139,6 +1139,14 @@ border-radius: 0;
     grid-column: 1;
 }
 
+#description, #date, #title {
+    margin-bottom: 1rem;
+}
+.submittodo {
+    margin-bottom: 1rem;
+}
+
+
 
     }
 
@@ -1154,6 +1162,7 @@ border-radius: 0;
           padding: .1rem;
         }
 
+   
         
     .todoheadertext, .todoheaderimage {
         margin-top: 0rem;
