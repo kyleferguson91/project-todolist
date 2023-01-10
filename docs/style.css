@@ -1134,15 +1134,15 @@ border-radius: 0;
     grid-row: 1;
     grid-column: 1;
 }
-    
+.todoheadertext {
+    margin-top: 1rem;
+  }
+
     }
 
     @media screen and (max-width: 650px) {
        
-  .todoheadertext {
-    margin-top: 1rem;
-  }
-
+ 
     }
 
 
