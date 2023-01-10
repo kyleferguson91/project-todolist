@@ -269,10 +269,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    
 }
 
-.plusimage {
-  
 
-}
 
 
 .plusbutton {
@@ -378,6 +375,8 @@ border-radius: 10px;
     display: inline;
     margin-bottom: 0;
 padding: 0;
+word-wrap: break-word;
+word-break: break-all;
 }
 
 .buttoncontainer {
@@ -430,13 +429,7 @@ padding: 0;
   
 
 }
-.todobutton, .todocheckbox {
 
-}
-
-.todobutton:not(:last-of-type) {
-
-}
 
 .footer {
     text-align: center;
@@ -466,7 +459,7 @@ height: 100%;
     text-align: center;
     font-size: 2rem;
     border-radius: 12px;
-    background-color: light;
+    background-color: lightgray;
     width: 3rem;
     margin-bottom: 10px;
  
@@ -543,9 +536,6 @@ margin-top: 8px;
 
 
 
-.projflex > input {
-  
-}
 
 .hide {
     display: none;
@@ -580,9 +570,7 @@ width: 100%;
 max-width: 100%;
 }
 
-.todoform > input, .todoform > textarea {
- 
-}
+
 
 
 .todoform > label {
@@ -780,10 +768,7 @@ flex-shrink: 0;
     overflow: auto;
 }
 
-.deleteprojectbutton {
 
-    
-}
 
 .submitcontainer {
 display: flex;
@@ -798,10 +783,10 @@ justify-content: center;
 }
 
 .titlesection {
-    width: 50%;
+    width: 80%;
     overflow: hidden;
     margin-bottom: 0;
-max-width: 14rem;
+
 
 }
 
@@ -849,8 +834,6 @@ max-width: 13rem;
     border-radius: 0;
 }
 
-.customprojects {}
-
 
      
 
@@ -870,10 +853,7 @@ max-width: 13rem;
 
 
 
-.buttoncontainer {
 
-
-}
 
 .titlesection {
     margin-bottom: 0rem;
@@ -901,9 +881,7 @@ max-width: 13rem;
     
 }
 
-body {
 
-}
 
 #date {
 width: 100%;
@@ -922,9 +900,7 @@ width: 100%;
 }
 
 
-body {
 
-}
 
 .inputcontainer {
     padding: 0;
@@ -1002,9 +978,7 @@ display: block;
     font-size: 1rem;
    }
 
-   .project > label {
- 
-   }
+
    
 .project {
     padding: 0px;
@@ -1099,9 +1073,7 @@ border-radius: 0;
     justify-content: flex-start;
     }
 
-    .buttoncontainer > button, .buttoncontainer > img, .buttoncontainer > input {
-   
-    }
+
 
     .buttoncontainer {
         gap: 0;
@@ -1112,9 +1084,6 @@ border-radius: 0;
         max-width: 4rem;
     }
 
-.closebutton {
-   
-}
 
 .quickinfo {
     flex-flow: column;
@@ -1166,14 +1135,8 @@ border-radius: 0;
 
     @media screen and (max-width: 650px) {
        
-        .projecttag {
-   
-        }
+  
 
-
-   .todoheader {
-
-   }
     }
 
 
@@ -1243,14 +1206,8 @@ border-radius: 0;
             font-size: 1.0rem;
           }
         
-.maincontainer {
 
 
-}
-
-.projectsection {
-
-}
 
 .buttoncontainer {
 padding: 0;

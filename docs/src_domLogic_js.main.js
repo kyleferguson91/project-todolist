@@ -6,7 +6,7 @@
   \*************************/
 /***/ (() => {
 
-throw new Error("Module parse failed: Identifier 'proname' has already been declared (289:4)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| todoarea.innerHTML = \"\"\n| \n> let proname = document.querySelector('.projectnametag')\n| \n| if (projectobject == \"All\" || projectobject == \"all\") {projectset = \"defaultprojects\"");
+throw new Error("Module parse failed: Unexpected token (703:62)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|                 \n|                 else {  e.target.parentElement.parentElement.querySelector('.datebutton').textContent = date.value\n>             console.log(  e.target.parentElement.parentElement}\n|                 }\n|                     ");
 
 /***/ })
 

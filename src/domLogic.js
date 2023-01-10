@@ -7,6 +7,7 @@ import mainplusimage from '../src/images/plus-circle-svgrepo-com(6).svg'
 import hoverplusimage from '../src/images/plus-circle-svgrepo-com(7).svg'
 import minussquare from '../src/images/minus-square-svgrepo-com.svg'
 
+
 import headerimage from '../src/images/text-align-center-svgrepo-com.svg'
 
 import mainpagebackground from '../src/images/backgrounds/Hexagon(1).svg'
@@ -698,11 +699,17 @@ else  if (priority.classList.contains('prioritywrapperhigh')) {
                     console.log('today', date.value, o.date)
                     if (prop.completed == true) { e.target.parentElement.parentElement.querySelector('.datebutton').textContent ='DONE!'}
                 
-                else {  e.target.parentElement.parentElement.querySelector('.datebutton').textContent = date.value}
+                else {  
+              
+                    e.target.parentElement.parentElement.querySelector('.datebutton').textContent = date.value
+           }
                 }
                     
                   
-                   
+                let removetodo = e.target.parentElement.parentElement.querySelector('.todoinfo')
+                e.target.parentElement.parentElement.classList.remove('large')
+                e.target.parentElement.parentElement.querySelector('.buttoncontainer').querySelector('.expandbutton').src = plusquare
+                e.target.parentElement.parentElement.removeChild(removetodo)
                  
                 })
                
@@ -725,6 +732,14 @@ else  if (priority.classList.contains('prioritywrapperhigh')) {
               
                 console.log(o.projects[project][index])
           
+// and return that specific todo to non expanded state..
+console.log()
+
+
+// remove the todo info that was appended on to make the card big
+
+
+// and set the icon back to a plus icon!
 
 
                })
