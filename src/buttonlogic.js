@@ -322,14 +322,13 @@ todoproject = selectedproj.value
         } console.info(todoproject, e.target.value, 'todoproject, CLICKER, IOS')
         })
 
-        document.addEventListener('click', function (params) {
             document.querySelectorAll('.projectselect').forEach(ele => {
             ele.addEventListener('touchend', (e) => {
             e.stopPropagation();
             console.info(todoproject, e.target.value, 'todoproject, etargvalue, IOS')
               })   
              }); 
-           });
+       
             
   
      
