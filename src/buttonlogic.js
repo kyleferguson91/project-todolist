@@ -313,7 +313,7 @@ todoproject = selectedproj.value
 
      
 
-     selectedproj.addEventListener('click', (e) => {
+     selectedproj.addEventListener('touchstart', (e) => {
         console.info(todoproject, e.target.value, 'todoproject, etargvalue, IOS')
      e.stopImmediatePropagation()
            if (e.target.value == "") {          }
