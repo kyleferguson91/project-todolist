@@ -672,8 +672,10 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .changebg {
-    background-color: rgb(128, 128, 128, 0.7);
-   
+border: 2px solid black;
+font-weight: bold;
+color: black !important;
+-webkit-text-fill-color: black !important;
 }
 
 .todoselect, .projectselect {
@@ -685,6 +687,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     height: auto;
 padding: 10px;
     font-size: 1.4rem;
+    color: rgb(0, 0, 0, 0.5);
 }
 .prioritybox
 {
