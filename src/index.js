@@ -7,7 +7,7 @@ import {projects} from './projectmaker.js'
 
 export const date = format(new Date(), 'EEEE, LLLL dd, yyyy')
 console.log(date)
-
+console.log(storageAvailable('localStorage'))
 
 
 
