@@ -1171,7 +1171,9 @@ border-radius: 0;
           padding: .1rem;
         }
 
-   
+   .closebutton {
+    width: 0;
+   }
         
     .todoheadertext, .todoheaderimage {
         margin-top: 0rem;
