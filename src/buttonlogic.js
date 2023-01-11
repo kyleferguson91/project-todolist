@@ -313,13 +313,13 @@ todoproject = selectedproj.value
 
      
 
-
-     
-        document.querySelectorAll('.projectselect').forEach((elem) => {
-            elem.addEventListener('touchend', (e) => {
-                e.stopImmediatePropagation()
-                console.info(e.target.value, 'currentclickedproject')
-            })
+     selectedproj.addEventListener('input', (e) => {
+        console.info(todoproject, e.target.value, 'todoproject, etargvalue, IOS')
+     e.stopImmediatePropagation()
+           if (e.target.value == "") {          }
+           else { todoproject = e.target.value
+            console.info(todoproject, e.target.value, 'todoproject, etargvalue, IOS')
+        }
         })
 
             
