@@ -707,6 +707,14 @@ padding: 10px;
     display: inline;
 }
 
+.deleteprojectbutton {
+    background-color: rgb(240, 128, 128, 0.5);
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    width: 1.5rem;
+}
+
 
 .closebuttonbox {
     display: flex;
@@ -1265,6 +1273,7 @@ padding: 2px;
 
 .deleteprojectbutton {
     align-self: flex-end;
+    width: 1rem;
 }
 
 #date {
