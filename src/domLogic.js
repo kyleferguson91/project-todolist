@@ -83,9 +83,9 @@ import('./projectmaker.js')
 
         // append title and close to project div
         projectbutton.classList.add('red')
-        projectdiv.appendChild(projectbutton)
+
         projectdiv.appendChild(deleteprojectbutton)
-  
+        projectdiv.appendChild(projectbutton)
   
 
         // we want to append these to the div which houses custom projects

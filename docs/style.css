@@ -714,7 +714,8 @@ padding: 10px;
     border-radius: 8px;
     border: none;
     width: auto;
-    height: 100%;
+    height: 1.5rem;
+
 }
 
 
@@ -751,13 +752,12 @@ height: 4rem;
 
 .projectbuttons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 6fr;
 
-    justify-items: right;
+    justify-items: left;
     margin-bottom: 20px;
-
-
     padding: 0px 20px 0px 20px;
+    
 }
 
 .todocheckbox {
@@ -778,7 +778,7 @@ flex-shrink: 0;
 
 .customprojecttitle {
  
-    width: 150%;
+    width: 100%;
     overflow: auto;
 }
 
@@ -1192,6 +1192,7 @@ border-radius: 0;
 
                 .projectcontent {
                     height: 100vh;
+                  
                 }
         .todoheadertext {
             margin-right: .1rem;
