@@ -322,6 +322,13 @@ todoproject = selectedproj.value
         }
         })
 
+        document.addEventListener('click', function (params) {
+            document.querySelectorAll('.projectselect').forEach(ele => {
+            ele.addEventListener('touchend', (e) => {
+            e.stopPropagation();
+              })   
+             }); 
+           });
             
   
      
