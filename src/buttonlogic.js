@@ -313,15 +313,13 @@ todoproject = selectedproj.value
 
      
 
-     selectedproj.addEventListener('touchstart', (e) => {
-        console.info(todoproject, e.target.value, 'todoproject, etargvalue, IOS')
+
      
-           if (e.target.value == "") {          }
-           else { todoproject = e.target.value
-            console.info(todoproject, e.target.value, 'todoproject, etargvalue, IOS')
-        }
+        document.querySelectorAll('.projectselect').forEach((elem) => {
+            elem.addEventListener('click', (e) => {
+                console.info(e.target.value, 'currentclickedproject')
+            })
         })
-     
 
             
   
