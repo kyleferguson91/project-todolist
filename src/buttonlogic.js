@@ -312,7 +312,7 @@ todoproject = selectedproj.value
      })
 
      selectedproj.addEventListener('click', (e) => {
-
+        console.log(todoproject, e.target.value, 'todoproject, etargvalue, IOS')
      e.stopImmediatePropagation()
            if (e.target.value == "") {          }
            else { todoproject = e.target.value
