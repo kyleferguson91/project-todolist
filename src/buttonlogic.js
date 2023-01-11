@@ -322,6 +322,9 @@ todoproject = selectedproj.value
         } console.info(todoproject, e.target.value, 'todoproject, CLICKER, IOS')
         })
 
+        // touchend event below so that selection of project choice from select menu registeres
+        // this event is on the option elements themselves and not the select as a hole.
+
             document.querySelectorAll('.projectselect').forEach(ele => {
             ele.addEventListener('touchend', (e) => {
             e.stopPropagation();
