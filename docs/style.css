@@ -1172,7 +1172,7 @@ border-radius: 0;
         }
 
    .closebutton {
-    width: 0;
+    width: auto;
    }
         
     .todoheadertext, .todoheaderimage {
