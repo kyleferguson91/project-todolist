@@ -27,9 +27,9 @@ export const projectstest = {
     5: [{title:'pooragas', duedate: '2022-02-02', description: 'poopooASDASDASD', priority: 'low', index: 0}]
 }
 
-export const projects = {
-  
-}
+// projects will depend on local storage.. // parse for correct format 
+
+export const projects = {}
 
 //2: [{title:'pooragas', duedate: '2022-02-02', description: 'poopooASDASDASD', priority: 'low', index: 0},]
 // add the appropriate todo's to these projects based on the appropriate dates (datefn!)
@@ -64,10 +64,14 @@ if (projects.hasOwnProperty(projectname)) {
 projects[projectname] = []
 let result = projectname
 
+// after adding key to project, update what the local storage has
+// clear the storage
+// add the new projects to storage
+
 
 
 console.log('DEFAULT PROJS ARRAY!!!')
-console.log(projects, 'current projects object');
+console.log(projects, 'current projects object', localStorage);
 
   
 
@@ -92,6 +96,9 @@ export function removeProject(project) {
 
         delete projects[project]
         console.log(projects)
+
+        // remove the project from the local array too!
+
 }
 
 

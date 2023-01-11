@@ -732,6 +732,15 @@ else  if (priority.classList.contains('prioritywrapperhigh')) {
                 o.projects[project][index].priority = priority
               
                 console.log(o.projects[project][index])
+
+                // and ensure we update local storage with the changes
+
+                import('./projectmaker.js')
+                .then((obj) => {
+                    localStorage.removeItem('projects')
+localStorage.setItem('projects', JSON.stringify(obj.projects))
+
+                })
           
 // and return that specific todo to non expanded state..
 console.log()
@@ -883,6 +892,14 @@ console.log()
             // and adjust its priority
             obj.projects[e.target.parentNode.parentNode.parentNode.dataset.projectset][e.target.parentNode.parentNode.parentNode.dataset.index].priority = priority 
 
+            // update local storage
+                    
+             
+                    localStorage.removeItem('projects')
+localStorage.setItem('projects', JSON.stringify(obj.projects))
+
+                
+
         })
 
        
@@ -954,6 +971,14 @@ else if (prop.completed == false) {input.removeAttribute('checked')}
 
                     // change complete status on project!
                     o.projects[e.target.parentNode.parentNode.parentNode.dataset.projectset][e.target.parentNode.parentNode.parentNode.dataset.index].completed = false
+
+           
+             // update local storage
+                        localStorage.removeItem('projects')
+    localStorage.setItem('projects', JSON.stringify(o.projects))
+    
+                    
+
                     console.log(o.projects[e.target.parentNode.parentNode.dataset.projectset])
                     // change button from 'done'
                   import ('date-fns')
@@ -983,6 +1008,15 @@ else if (prop.completed == false) {input.removeAttribute('checked')}
                     todocontentdiv.querySelector('.buttoncontainer').querySelector('.datebutton').classList.remove('redback')
                     o.projects[e.target.parentNode.parentNode.parentNode.dataset.projectset][e.target.parentNode.parentNode.parentNode.dataset.index].completed = true
                    
+
+                    // update local storage
+      
+                                     // update local storage since completed changed
+
+                        
+                                     localStorage.removeItem('projects')
+                                     localStorage.setItem('projects', JSON.stringify(o.projects))
+                                     
                   }
                 
                     // but we need a way to also set it green if completed is true by default!
@@ -1008,7 +1042,7 @@ else if (prop.completed == false) {input.removeAttribute('checked')}
                     todocontentdiv.classList.toggle('complete')
                     todocontentdiv.querySelector('.buttoncontainer').querySelector('.datebutton').classList.toggle('complete')
                     todocontentdiv.firstChild.firstChild.nextSibling.querySelector('input').checked = "checked"
-          
+                 
 
                   }
         
@@ -1062,6 +1096,14 @@ else if (prop.completed == false) {input.removeAttribute('checked')}
 
 
 
+// we run populate display after nearly everything
+// use it to update the project array to local storage
+
+import('./projectmaker.js')
+.then((obj) => {
+    localStorage.removeItem('projects')
+localStorage.setItem('projects', JSON.stringify(obj.projects))
+})
 
 
 }

@@ -1,5 +1,5 @@
 import { formController as formSubmit  } from './formlogic.js'
-console.log = console.info;
+
 import mainplusimage from '../src/images/plus-circle-svgrepo-com(6).svg'
 import hoverplusimage from '../src/images/plus-circle-svgrepo-com(7).svg'
 import clickplusimage from '../src/images/plus-circle-svgrepo-com(8).svg'
