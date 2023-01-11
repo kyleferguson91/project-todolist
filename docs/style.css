@@ -1273,7 +1273,7 @@ padding: 2px;
 
 .deleteprojectbutton {
     align-self: flex-end;
-    width: 1rem;
+    width: auto;
 }
 
 #date {
