@@ -314,12 +314,12 @@ todoproject = selectedproj.value
      
 
      selectedproj.addEventListener('input', (e) => {
-        console.info(todoproject, e.target.value, 'todoproject, etargvalue, IOS')
+    
      e.stopImmediatePropagation()
            if (e.target.value == "") {          }
            else { todoproject = e.target.value
            
-        } console.info(todoproject, e.target.value, 'todoproject, CLICKER, IOS')
+        } 
         })
 
         // touchend event below so that selection of project choice from select menu registeres
@@ -328,8 +328,10 @@ todoproject = selectedproj.value
             document.querySelectorAll('.projectselect').forEach(ele => {
             ele.addEventListener('touchend', (e) => {
             e.stopPropagation();
-            console.info(todoproject, e.target.value, 'todoproject, etargvalue, IOS')
-              })   
+            if (e.target.value == "") {          }
+            else { todoproject = e.target.value
+           
+              } })   
              }); 
        
             
