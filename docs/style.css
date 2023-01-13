@@ -151,8 +151,7 @@ margin: 0;
 display: flex;
 flex-flow: column;
 
-
-
+max-height: 100px;
 }
 
 .projectcontent {
@@ -247,7 +246,7 @@ height: auto;
 
 overflow-y: auto;
 max-height: 25vh;
-min-height: 30vh;
+min-height: 0vh;
 font-size: 1.4rem;
 
 
